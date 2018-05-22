@@ -1,0 +1,16 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{l l l}
+\hline
+\textbf{Treatments} & \textbf{Index} & \textbf{Value}\\
+\hline
+Treatment 1 & 0 & 0 \\
+\hline
+\end{tabular}
+\caption{Table caption}
+\end{table}
+
+\begin{equation}
+\label{eq:emc}
+e = mc^2
+\end{equation}
