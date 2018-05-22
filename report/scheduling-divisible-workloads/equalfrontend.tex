@@ -1,0 +1,300 @@
+\subsection{With Front-end Schema}
+\vspace*{5pt}
+I investigate the simple case first and then deduce the more general closed form formula for the homogeneous regular mesh situation.
+\vspace*{5pt}
+
+\subsubsection{Load From Corner}
+\begin{itemize}
+\vspace*{5pt}
+\item 2*2 regular mesh Fig.\ref{22f}
+\item 2*3 regular mesh Fig.\ref{23f}
+\item 2*n regular mesh,for example $n = 10$ Fig.\ref{210f}
+\item 3*n regular mesh,for example $n = 8$ Fig.\ref{38f}
+\item m*n regular mesh,for example $m = 5, n = 5$ Fig.\ref{410f}
+\end{itemize}
+
+According to Fig.\ref{22f},data injection position comes from corner.
+
+There are four unit cores to handle the whole workload in the regular mesh.
+
+\begin{figure}[h]
+\centering\includegraphics[width = 0.7\linewidth]{figure/c22_f}
+\caption{2*2 regular mesh}
+\label{22f}
+\end{figure}
+
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{1}zT_{cm} + \alpha_{3}\omega T_{cp} = T_{f,m}$$
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+
+
+\begin{equation}
+{
+\left[ \begin{array}{ccc}
+1 & 2 & 1\\
+1 & -1 & 0\\
+0 & \sigma-1 & 1
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{3} 
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 
+\end{array} 
+\right ]
+\end{equation}
+
+\vspace*{50pt}
+According to Fig.\ref{23f}, the data load injection comes from corner and there are
+six cores to handle the whole workload.
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\linewidth]{figure/c23_f}
+\caption{2*3 regular mesh}
+\label{23f}
+\end{figure}
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{1}zT_{cm} + \alpha_{3}\omega T_{cp} = T_{f,m}$$
+$$\alpha_{2}zT_{cm} + \alpha_{4}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{3})zT_{cm} + \alpha_{5}\omega T_{cp} = T_{f,m}$$
+
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+\begin{equation}
+{
+\left[ \begin{array}{cccc}
+1 & 2 & 2 & 1\\
+1 & -1 & 0 & 0\\
+0 & \sigma-1 & 1 & 0\\
+0 & \sigma-1 & \sigma & 1
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{3} \\
+\alpha_{5}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+\vspace*{50pt}
+
+Considering the $2*n$ situation, the formula is:
+
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{1}zT_{cm} + \alpha_{3}\omega T_{cp} = T_{f,m}$$
+$$\alpha_{2}zT_{cm} + \alpha_{4}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{3})zT_{cm} + \alpha_{5}\omega T_{cp} = T_{f,m}$$
+$$\vdots$$
+$$(\alpha_{1} + \alpha_{3} +\cdots + \alpha_{2 \times n - 1})zT_{cm} +\alpha_{2 \times n + 1} \omega T_{cp} = T_{f,m}$$
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+
+\vspace*{50pt}
+\input{e3.tex}
+
+\vspace*{80pt}
+\input{e4.tex}
+
+\vspace*{50pt}
+Consider more general case Fig.\ref{410f} the closed formula groups are presented as following:
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\linewidth]{figure/c410_f}
+\caption{m*n $m = 5$, $n = 5$ regular mesh}
+\label{410f}
+\end{figure}
+
+
+\begin{equation}
+{
+\left[ \begin{array}{ccccccccc}
+1 & 2 & 3 & 4 & 5 & 4 & 3 & 2 & 1\\
+1 & -1 & 0 & 0 & 0 & 0 & 0 & 0& 0\\
+0 & \sigma-1 & 1 & 0 & 0 & 0 &0 & 0 & 0 \\
+0 & \sigma-1 & \sigma & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & \sigma-1 & \sigma & \sigma & 1 & 0 & 0 & 0 & 0\\
+0 & \sigma-1 & \sigma & \sigma & \sigma & 1 & 0& 0 & 0\\
+0 & \sigma-1 & \sigma & \sigma & \sigma & \sigma & 1 & 0 & 0\\
+0 & \sigma-1 & \sigma & \sigma & \sigma & \sigma & \sigma & 1 & 0\\
+0 & \sigma-1 & \sigma & \sigma & \sigma & \sigma & \sigma & \sigma & 1\\
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{3} \\
+\alpha_{6} \\
+\alpha_{10} \\
+\alpha_{15}\\
+\alpha_{19}\\
+\alpha_{22}\\
+\alpha_{24}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+\vspace*{50pt}
+
+\subsubsection{Load From Boundary Grid Position}
+The data injection position lays on the boundary Fig.\ref{e33f} and the regular mesh is 3*3 situation.
+
+\begin{figure}[h]
+\centering\includegraphics[width= 0.7 \linewidth]{figure/e33_f}
+\caption{Data injection position on the boundary of 3*3 regular mesh}
+\label{e33f}
+\end{figure}
+
+The equation for the boundary data injection condition as follows:
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{3} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{1}zT_{cm} + \alpha_{4}\omega T_{cp} = T_{f,m}$$
+$$\alpha_{2}zT_{cm} + \alpha_{5}\omega T_{cp} = T_{f,m}$$
+$$\alpha_{3}zT_{cm} + \alpha_{6}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{4})zT_{cm} + \alpha_{7}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{2} + \alpha_{5})zT_{cm} + \alpha_{8}\omega T_{cp} = T_{f,m}$$
+
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+
+\vspace*{50pt}
+
+\begin{equation}
+{
+\left[ \begin{array}{cccc}
+1 & 3 & 3 & 2\\
+1 & -1 & 0 & 0\\
+0 & \sigma-1 & 1 & 0\\
+0 & \sigma-1 & \sigma & 1
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{4} \\
+\alpha_{7}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+\vspace*{50pt}
+
+\subsubsection{Load From Inner Grid}
+\vspace*{5pt}
+The data injection position lays on the inner grid position Fig.\ref{i33f} and the regular mesh is 3*3 situation.
+
+\begin{figure}[h]
+\centering\includegraphics[width= 0.7\linewidth]{figure/i33_f}
+\caption{Data injection position on the inner grid position of 3*3 regular mesh}
+\label{i33f}
+\end{figure}
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{3} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{4} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{1}zT_{cm} + \alpha_{5}\omega T_{cp} = T_{f,m}$$
+$$\alpha_{1}zT_{cm} + \alpha_{6}\omega T_{cp} = T_{f,m}$$
+$$\alpha_{1}zT_{cm} + \alpha_{7}\omega T_{cp} = T_{f,m}$$
+$$\alpha_{1}zT_{cm} + \alpha_{8}\omega T_{cp} = T_{f,m}$$
+
+The equation for the boundary condition as follows:
+
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+
+\vspace*{20pt}
+
+\begin{equation}
+{
+\left[ \begin{array}{ccc}
+1 & 4 & 4 \\
+1 & -1 & 0\\
+0 & \sigma-1 & 1\\
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{5} \\
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 
+\end{array} 
+\right ]
+\end{equation}
+
+
+\subsection{General Case}
+\begin{equation}
+{
+\left[ \begin{array}{ccccccc}
+1 & m_{1} & m_{2} & \cdots & m_{n-2} & m_{n-1} & m_{n}\\
+1 & -1 & 0 & \cdots& 0 & 0 & 0\\
+0 & \sigma -1 & 1 & \cdots & 0 & 0 & 0 \\
+0 & \sigma -1 & \sigma & 1 & 0 & \cdots & 0 \\
+0 & \sigma -1 & \sigma & \sigma & 1 & 0 & 0 \\
+\vdots & \vdots & \vdots  &   \vdots & \ddots & \ddots\\
+0 & \sigma -1 & \sigma & \cdots & \sigma & \sigma & 1
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{l_{0}} \\
+\alpha_{l_{1}} \\
+\alpha_{l_{2}} \\
+\alpha_{l_{3}} \\
+\vdots \\
+\alpha_{l_{n-1}}\\
+\alpha_{l_{n}}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+
+
+
+
+
+
+
+
+

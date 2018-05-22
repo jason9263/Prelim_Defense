@@ -1,0 +1,31 @@
+\section{Processor Equivalence}
+In this section, we will discuss the power equivalence problem.
+\\
+I will present the closed-form equal formula about the load from three different kind of injection position,load from corner,boundary and inner grid position in regular mesh.
+\\
+In addition, considering the unit core with or without the front-end processor,the data transportation schema can be considered as two situation with front-end  and without front-end transportation.
+
+\vspace*{5pt}
+
+For a homogeneous regular mesh, which can be collapsed into an equivalent node, the notation is presented as follows.\\
+
+\begin{itemize}
+
+\item $\alpha_{0}$: The load fraction assigned to the root processor.
+\item $\alpha_{i}$: The load fraction assigned to the $i$th processor.
+\item $\omega_{i}$: The inverse computing speed on the $i$th processor.
+\item $\omega_{eq}$: The inverse computing speed on an equivalent node collapsed from a regular mesh.
+\item $z_{i}$: The inverse link speed on the $i$th link.
+\item $T_{cp}$: Computing intensity constant.The entire load can be transmitted in $z_{i}T_{cp}$ on the $i$th processor.
+\item $T_{cm}$: Communication intensity constant.The entire load can be transmitted in $z_{i}T_{cm}$ seconds over the $i$th link.
+\item $T_{f,m}$: The finish time of the whole regular network.Here $T_{f,m}$ is equal to $\omega_{eq}T_{cp}$.
+\item $T_{f,0}$: The finish time for the entire divisible load solved on the root processor.Here $T_{f,0}$ is equal to $1 \times \omega_{0}T_{cp}$, that is $\omega_{0}T_{cp}$.
+
+\end{itemize}
+\vspace*{5pt}
+\input{equalfrontend.tex}
+\vspace*{5pt}
+\input{equalnofrontend.tex}
+\vspace*{5pt}
+\input{equalcompare.tex}
+

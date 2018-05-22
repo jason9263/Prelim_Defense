@@ -1,0 +1,332 @@
+\subsubsection{Workstation without front-end}
+
+\vspace*{50pt}
+
+We investigate the simple case first and then deduce the more general closed form formula for the regular mesh situation.
+
+\subsection{Load From Corner}
+\begin{itemize}
+
+\item 2*2 regular mesh Fig.\ref{22f}
+\item 2*3 regular mesh Fig.\ref{23f}
+\item 2*n regular mesh,for example $n = 10$ Fig.\ref{210f}
+\item 3*n regular mesh,for example $n = 8$ Fig.\ref{38f}
+\item m*n regular mesh,for example $m = 5, n = 5$ Fig.\ref{410f}
+
+\end{itemize}
+
+According to Fig.\ref{22f},data injection position comes from corner unit processor.
+
+There are four cores to handle the whole workload in the regular mesh.
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1}zT_{cm} + \alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2}zT_{cm} + \alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{3})zT_{cm} + \alpha_{3}\omega T_{cp} = T_{f,m}$$
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+
+\begin{equation}
+{
+\left[ \begin{array}{ccc}
+1 & 2 & 1\\
+1 & -(\sigma + 1) & 0\\
+1 & -\sigma & -(\sigma + 1)
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{3} 
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 
+\end{array} 
+\right ]
+\end{equation}
+
+\vspace*{50pt}
+
+According to Fig.\ref{23f}, the formula groups are
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1}zT_{cm} + \alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2}zT_{cm} + \alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{3})zT_{cm} + \alpha_{3}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{4})zT_{cm} + \alpha_{4}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{3} + \alpha_{5})zT_{cm} + \alpha_{5}\omega T_{cp} = T_{f,m}$$
+
+\begin{equation}
+{
+\left[ \begin{array}{cccc}
+1 & 2 & 2 & 1\\
+1 & -(\sigma + 1) & 0 & 0\\
+1 & -\sigma & -(\sigma + 1) & 0\\
+1 & -\sigma & -\sigma & -(\sigma + 1)
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{3} \\
+\alpha_{5}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+
+the speedup ratio is:
+$\frac{1}{\alpha_{0}}$
+
+\vspace*{50pt}
+
+According to the 2*n regular mesh, the formula equation group as follows:
+
+$$\alpha_{1}zT_{cm} + \alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2}zT_{cm} + \alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{3})zT_{cm} + \alpha_{3}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{4})zT_{cm} + \alpha_{4}\omega T_{cp} = T_{f,m}$$
+
+$$(\alpha_{1} + \alpha_{3} + \alpha_{5})zT_{cm} + \alpha_{5}\omega T_{cp} = T_{f,m}$$
+$$\vdots$$
+$$(\alpha_{1} + \alpha_{3} +\cdots + \alpha_{2 \times n + 1})zT_{cm} +\alpha_{2 \times n + 1} \omega T_{cp} = T_{f,m}$$
+
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+
+\begin{equation}
+{
+\left[ \begin{array}{ccccccc}
+1 & 2 & 2 & \cdots & 2 & 2 & 1\\
+1 & -(\sigma + 1) & 0 & \cdots& 0 & 0 & 0\\
+1 & -\sigma & -(\sigma + 1) & \cdots & 0 & 0 & 0 \\
+1 & -\sigma & -\sigma & -(\sigma + 1) & 0 & \cdots & 0 \\
+1 & -\sigma & -\sigma & -\sigma & -(\sigma + 1) & 0 & 0 \\
+\vdots & \vdots & \vdots  &   \vdots & \ddots & \ddots\\
+1 & -\sigma & -\sigma & \cdots & -\sigma & -\sigma & -(\sigma + 1)
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{3} \\
+\alpha_{5} \\
+\vdots \\
+\alpha_{2 \times n - 1}\\
+\alpha_{2 \times n + 1}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+So the Speedup is $$\frac{1}{\alpha_{0}}$$
+
+\vspace*{50pt}
+
+According to the Fig.\ref{38f}, the matrix is:
+We use ${\sigma}^{\star}$ to present the $-(\sigma + 1)$
+
+\begin{small}
+\begin{equation}
+{
+\left[ \begin{array}{cccccccccc}
+1 & 2 & 3 & 3 & 3 & 3 & 3 & 3 & 2 & 1\\
+1 & {\sigma}^{\star} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+1 & -\sigma & {\sigma}^{\star} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+1 & -\sigma & -\sigma & {\sigma}^{\star} & 0 & 0 & 0 & 0 & 0 & 0 \\
+1 & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} & 0 & 0 & 0 & 0 & 0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} & 0 & 0 & 0 & 0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} & 0 & 0 & 0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} & 0 & 0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} & 0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -{\sigma}^{\star} \\
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{3} \\
+\alpha_{6} \\
+\alpha_{9} \\
+\alpha_{12}\\
+\alpha_{15}\\
+\alpha_{18}\\
+\alpha_{21}\\
+\alpha_{23}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{array} 
+\right ]
+\end{equation}
+\end{small}
+
+
+\vspace*{50pt}
+According to the Fig. \ref{410f}, the formula groups as follows:
+We use ${\sigma}^{\star}$ to present the $-(\sigma + 1)$
+
+\begin{equation}
+{
+\left[ \begin{array}{ccccccccc}
+1 & 2 & 3 & 4 & 5 & 4 & 3 & 2 & 1\\
+1 & {\sigma}^{\star} & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+1 & -\sigma & {\sigma}^{\star} & 0 & 0 & 0 & 0& 0 & 0 \\
+1 & -\sigma & -\sigma & {\sigma}^{\star} & 0 &0 & 0 & 0 & 0 \\
+1 & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} & 0 & 0 & 0 & 0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} & 0 & 0 & 0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} & 0 & 0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & {\sigma}^{\star} &0\\
+1 & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & -\sigma & {\sigma}^{\star}\\
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{3} \\
+\alpha_{6} \\
+\alpha_{10} \\
+\alpha_{15}\\
+\alpha_{19}\\
+\alpha_{22}\\
+\alpha_{24}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+
+\vspace*{50pt}
+\subsubsection{Load From Boundary Grid Position}
+The data injection position lays on the boundary Fig.\ref{e33f} and the regular mesh is 3*3 situation.
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1}zT_{cm} + \alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2}zT_{cm} + \alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{3}zT_{cm} + \alpha_{3} \omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{4})zT_{cm} + \alpha_{4}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{2} + \alpha_{5})zT_{cm} + \alpha_{5}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{3} + \alpha_{6})zT_{cm} + \alpha_{6}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{4} +\alpha_{7})zT_{cm} + \alpha_{7}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{4} +\alpha_{8})zT_{cm} + \alpha_{8}\omega T_{cp} = T_{f,m}$$
+
+The equation for the boundary condition as follows:
+
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+\begin{equation}
+{
+\left[ \begin{array}{cccc}
+1 & 3 & 3 & 2\\
+1 & -(\sigma + 1) & 0 & 0\\
+1 & -\sigma & -(\sigma + 1) & 0\\
+1 & -\sigma & -\sigma & -(\sigma + 1)
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{4} \\
+\alpha_{7}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+
+
+\vspace*{50pt}
+\subsubsection{Load From Inner Grid}
+The data injection position lays on the inner grid position Fig.\ref{i33f} and the regular mesh is 3*3 situation.
+
+$$\alpha_{0} \omega T_{cp} = T_{f,m}$$ 
+$$\alpha_{1}zT_{cm} + \alpha_{1} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{2}zT_{cm} + \alpha_{2} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{3}zT_{cm} + \alpha_{3} \omega T_{cp} = T_{f,m}$$
+$$\alpha_{4}zT_{cm} + \alpha_{4} \omega T_{cp} = T_{f,m}$$
+$$(\alpha_{1} + \alpha_{5})zT_{cm} + \alpha_{5}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{2} + \alpha_{6})zT_{cm} + \alpha_{6}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{3} + \alpha_{7})zT_{cm} + \alpha_{7}\omega T_{cp} = T_{f,m}$$
+$$(\alpha_{4} + \alpha_{8})zT_{cm} + \alpha_{8}\omega T_{cp} = T_{f,m}$$
+
+The equation for the boundary data injection condition as follows:
+
+$$\sigma = \frac{zT_{cm}}{\omega T_{cp}}$$
+
+\begin{equation}
+{
+\left[ \begin{array}{ccc}
+1 & 4 & 4 \\
+1 & -(\sigma + 1) & 0\\
+1 & -\sigma & -(\sigma + 1)\\
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{0} \\
+\alpha_{1} \\
+\alpha_{5} \\
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 
+\end{array} 
+\right ]
+\end{equation}
+\vspace*{50pt}
+
+
+\subsubsection{General Case}
+\begin{equation}
+{
+\left[ \begin{array}{ccccccc}
+1 & m_{1} & m_{2} & \cdots & m_{n-2} & m_{n-1} & m_{n}\\
+1 & -(\sigma + 1) & 0 & \cdots& 0 & 0 & 0\\
+1 & -\sigma & -(\sigma + 1) & \cdots & 0 & 0 & 0 \\
+1 & -\sigma & -\sigma & -(\sigma + 1) & 0 & \cdots & 0 \\
+1 & -\sigma & -\sigma & -\sigma & -(\sigma + 1) & 0 & 0 \\
+\vdots & \vdots & \vdots  &   \vdots & \ddots & \ddots\\
+1 & -\sigma & -\sigma & \cdots & -\sigma & -\sigma & -(\sigma + 1)
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{l_{0}} \\
+\alpha_{l_{1}} \\
+\alpha_{l_{2}} \\
+\alpha_{l_{3}} \\
+\vdots \\
+\alpha_{l_{n-1}}\\
+\alpha_{l_{n}}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{array} 
+\right ]
+\end{equation}
