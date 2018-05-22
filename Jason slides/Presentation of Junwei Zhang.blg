@@ -1,0 +1,33 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Presentation of Junwei Zhang.aux
+The style file: unsrt.bst
+Database file #1: egbib.bib
+Repeated entry---line 190 of file egbib.bib
+ : @article{su2016area
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 198 of file egbib.bib
+ : @article{santambrogio2015optimal
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 206 of file egbib.bib
+ : @article{gu2013variational
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 270 of file egbib.bib
+ : @article{su2015optimal
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 342 of file egbib.bib
+ : @book{monge1781memoire
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 348 of file egbib.bib
+ : @inproceedings{kantorovich1942transfer
+ :                                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 357 of file egbib.bib
+ : @article{brenier1991polar
+ :                          ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in kantorovich1942transfer
+(There were 7 error messages)

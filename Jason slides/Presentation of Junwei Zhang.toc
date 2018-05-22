@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Introduction and Theory Background}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introduction of Optimal Mass Transport Problem}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Theory Background}{9}{0}{1}
+\beamer@sectionintoc {2}{Computational Algorithms In Discrete Settings}{25}{0}{2}
+\beamer@subsectionintoc {2}{1}{Discrete Conformal Mapping}{25}{0}{2}
+\beamer@subsectionintoc {2}{2}{Brenier's Polar Factorization}{32}{0}{2}
+\beamer@subsectionintoc {2}{3}{Discrete Optimal Mass Transport}{34}{0}{2}
+\beamer@subsectionintoc {2}{4}{Area-preserving Map For Topological Disks}{38}{0}{2}
+\beamer@subsectionintoc {2}{5}{Discrete Conformal Wasserstein Distance}{41}{0}{2}
+\beamer@sectionintoc {3}{Applications}{44}{0}{3}
+\beamer@subsectionintoc {3}{1}{Wasserstein Distance for Shape Analysis}{44}{0}{3}
+\beamer@subsectionintoc {3}{2}{Optimal Mass Transport For Visualization}{49}{0}{3}
+\beamer@subsectionintoc {3}{3}{Volume Preserving Morphing}{53}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{56}{0}{4}
+\beamer@sectionintoc {5}{Future Works}{57}{0}{5}

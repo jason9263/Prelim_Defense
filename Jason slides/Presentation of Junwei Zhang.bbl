@@ -1,0 +1,58 @@
+\begin{thebibliography}{1}
+
+\bibitem{monge1781memoire}
+Gaspard Monge.
+\newblock {\em M{\'e}moire sur la th{\'e}orie des d{\'e}blais et des remblais}.
+\newblock De l'Imprimerie Royale, 1781.
+
+\bibitem{kantorovich1942transfer}
+Leonid~V Kantorovich.
+\newblock On the transfer of masses.
+\newblock In {\em Dokl. Akad. Nauk. SSSR}, volume~37, pages 227--229, 1942.
+
+\bibitem{santambrogio2015optimal}
+Filippo Santambrogio.
+\newblock Optimal transport for applied mathematicians.
+\newblock {\em Progress in Nonlinear Differential Equations and their
+  applications}, 87, 2015.
+
+\bibitem{brenier1991polar}
+Yann Brenier.
+\newblock Polar factorization and monotone rearrangement of vector-valued
+  functions.
+\newblock {\em Communications on pure and applied mathematics}, 44(4):375--417,
+  1991.
+
+\bibitem{de2014monge}
+Guido De~Philippis and Alessio Figalli.
+\newblock The monge--amp{\`e}re equation and its link to optimal
+  transportation.
+\newblock {\em Bulletin of the American Mathematical Society}, 51(4):527--580,
+  2014.
+
+\bibitem{su2015optimal}
+Zhengyu Su, Yalin Wang, Rui Shi, Wei Zeng, Jian Sun, Feng Luo, and Xianfeng Gu.
+\newblock Optimal mass transport for shape matching and comparison.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  37(11):2246--2259, 2015.
+
+\bibitem{su2016area}
+Kehua Su, Li~Cui, Kun Qian, Na~Lei, Junwei Zhang, Min Zhang, and Xianfeng~David
+  Gu.
+\newblock Area-preserving mesh parameterization for poly-annulus surfaces based
+  on optimal mass transportation.
+\newblock {\em Computer Aided Geometric Design}, 2016.
+
+\bibitem{su2016volume}
+Kehua Su, Wei Chen, Na~Lei, Junwei Zhang, Kun Qian, and Xianfeng Gu.
+\newblock Volume preserving mesh parameterization based on optimal mass
+  transportation.
+\newblock {\em Computer-Aided Design}, 2016.
+
+\bibitem{gu2013variational}
+Xianfeng Gu, Feng Luo, Jian Sun, and S-T Yau.
+\newblock Variational principles for minkowski type problems, discrete optimal
+  transport, and discrete monge-ampere equations.
+\newblock {\em arXiv preprint arXiv:1302.5472}, 2013.
+
+\end{thebibliography}
