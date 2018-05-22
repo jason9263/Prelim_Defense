@@ -1,0 +1,31 @@
+
+Journal
+
+Area-preserving mesh parameterization for poly-annulus surfaces based on optimal mass transportation
+Computer Aided Geometric Design, In Press, Corrected Proof, Available online 11 May 2016
+Kehua Su, Li Cui, Kun Qian, Na Lei, Junwei Zhang, Min Zhang, Xianfeng David Gu
+
+Volume preserving mesh parameterization based on optimal mass transportation
+Computer-Aided Design, In Press, Accepted Manuscript, Available online 11 June 2016
+Kehua Su, Wei Chen, Na Lei, Junwei Zhang, Kun Qian, Xianfeng Gu
+
+
+2.Surface-based shape classification using Wasserstein distance
+
+
+
+Meng L., Zhang J.W. , “An Improved Incremental Algorithm for Voronoi Diagram”, Journal of Image and Graphics, 2010,15(6), 978-984
+
+
+
+Conference
+
+Area-preserving Mesh Parameterization for Poly-Annulus Surfaces Based on Optimal Mass Transportation 
+Kehua Su, Li Cui, Kun Qian, Na Lei, Junwei Zhang, Min Zhang, Xianfeng Gu       GMP 2016 talk
+
+Mayank Goswami, Siming Li, Junwei Zhang, Emil Saucan, Xianfeng David Gu, Jie Gao:
+Space Filling Curves for 3D Sensor Networks with Complex Topology. CCCG 2015
+
+Arxiv
+
+http://arxiv.org/abs/1507.02931

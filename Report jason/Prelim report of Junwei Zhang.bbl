@@ -1,0 +1,81 @@
+\begin{thebibliography}{10}
+
+\bibitem{monge1781memoire}
+Monge, G.:
+\newblock M{\'e}moire sur la th{\'e}orie des d{\'e}blais et des remblais.
+\newblock De l'Imprimerie Royale (1781)
+
+\bibitem{kantorovich1942transfer}
+Kantorovich, L.V.:
+\newblock On the transfer of masses.
+\newblock In: Dokl. Akad. Nauk. SSSR. Volume~37. (1942)  227--229
+
+\bibitem{brenier1991polar}
+Brenier, Y.:
+\newblock Polar factorization and monotone rearrangement of vector-valued
+  functions.
+\newblock Communications on pure and applied mathematics \textbf{44}(4) (1991)
+  375--417
+
+\bibitem{haker2004optimal}
+Haker, S., Zhu, L., Tannenbaum, A., Angenent, S.:
+\newblock Optimal mass transport for registration and warping.
+\newblock International Journal of computer vision \textbf{60}(3) (2004)
+  225--240
+
+\bibitem{ur20093d}
+ur~Rehman, T., Haber, E., Pryor, G., Melonakos, J., Tannenbaum, A.:
+\newblock 3d nonrigid registration via optimal mass transport on the gpu.
+\newblock Medical image analysis \textbf{13}(6) (2009)  931--940
+
+\bibitem{dominitz2010texture}
+Dominitz, A., Tannenbaum, A.:
+\newblock Texture mapping via optimal mass transport.
+\newblock IEEE transactions on visualization and computer graphics
+  \textbf{16}(3) (2010)  419--433
+
+\bibitem{ni2015ricci}
+Ni, C.C., Lin, Y.Y., Gao, J., Gu, X.D., Saucan, E.:
+\newblock Ricci curvature of the internet topology.
+\newblock In: 2015 IEEE Conference on Computer Communications (INFOCOM), IEEE
+  (2015)  2758--2766
+
+\bibitem{solomon2015convolutional}
+Solomon, J., De~Goes, F., Peyr{\'e}, G., Cuturi, M., Butscher, A., Nguyen, A.,
+  Du, T., Guibas, L.:
+\newblock Convolutional wasserstein distances: Efficient optimal transportation
+  on geometric domains.
+\newblock ACM Transactions on Graphics (TOG) \textbf{34}(4) (2015) ~66
+
+\bibitem{bonneel2016wasserstein}
+Bonneel, N., Peyr{\'e}, G., Cuturi, M., Mazenc, F., Malisoff, M., Fridman, E.,
+  Bonnet, C., Mazenc, F., Djema, W., Le~Ha Vy~Nguyen, C.B.,  et~al.:
+\newblock Wasserstein barycentric coordinates: Histogram regression using
+  optimal transport.
+\newblock ACM Transactions on Graphics \textbf{35}(4) (2016)
+
+\bibitem{gu2013variational}
+Gu, X., Luo, F., Sun, J., Yau, S.T.:
+\newblock Variational principles for minkowski type problems, discrete optimal
+  transport, and discrete monge-ampere equations.
+\newblock arXiv preprint arXiv:1302.5472 (2013)
+
+\bibitem{gardner2002brunn}
+Gardner, R.:
+\newblock The brunn-minkowski inequality.
+\newblock Bulletin of the American Mathematical Society \textbf{39}(3) (2002)
+  355--405
+
+\bibitem{su2016area}
+Su, K., Cui, L., Qian, K., Lei, N., Zhang, J., Zhang, M., Gu, X.D.:
+\newblock Area-preserving mesh parameterization for poly-annulus surfaces based
+  on optimal mass transportation.
+\newblock Computer Aided Geometric Design (2016)
+
+\bibitem{su2016volume}
+Su, K., Chen, W., Lei, N., Zhang, J., Qian, K., Gu, X.:
+\newblock Volume preserving mesh parameterization based on optimal mass
+  transportation.
+\newblock Computer-Aided Design (2016)
+
+\end{thebibliography}
