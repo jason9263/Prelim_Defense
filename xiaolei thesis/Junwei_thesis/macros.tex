@@ -1,0 +1,263 @@
+%%%% my notation
+\parindent = 5ex
+
+\newcommand\ams{Department of Applied Mathematics and Statistics}
+\newcommand\bnl{Center for Data Intensive Computing\\Brookhaven National Laboratory}
+
+\newcommand{\half}{\mathchoice
+ {\frac{1}{2}} {1/2} {\frac{1}{2}} {1/2}}
+
+\newcommand{\quarter}{\mathchoice
+ {\frac{1}{4}} {1/4} {\frac{1}{4}} {1/4}}
+                             
+\newcommand{\ud}{\mathrm{d}}
+
+%%%% end of my notation
+
+%
+\newcommand{\doublespacing}{\renewcommand{\baselinestretch}{1.66}\normalsize}
+\newcommand{\singlespacing}{\renewcommand{\baselinestretch}{1.00}\normalsize}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+%
+% TODO enviroment
+\newcommand{\todo}[1]{[*** TO DO: #1 ***]}
+\newenvironment{TODO}
+ {\goodbreak\medskip\par\noindent
+   TO DO:\par\noindent$\overline{*****}$\begin{itemize}}
+    {\end{itemize}\par\noindent$\underline{*****}$\medskip}
+%
+% Macros for noninteracting cluster theory and vapor condensation:
+% 
+\newcommand{\dissty}{\displaystyle}
+\newcommand{\scrsty}{\scriptstyle}
+%
+% cross-referencing
+%\newcommand{\eqref}[1]{(\ref{#1})}
+\newcommand{\FronTierp}{\textit{\hbox{Fron\hspace{-2pt}T\hspace{-1pt}ier++\hspace{4pt}}}}
+\newcommand{\Equation}[1]{Equation~\eqref{#1}}
+\newcommand{\Equations}[1]{Equations~\eqref{#1}}
+\newcommand{\Eqn}[1]{Eq.~\eqref{eqn:#1}}
+\newcommand{\Eqs}[1]{Eqs.~\eqref{#1}}
+\newcommand{\Eqsthru}[2]{Eqs.~\eqref{#1}--\eqref{#2}}
+\newcommand{\Eqand}[2]{Eqs.~\eqref{#1} and~\eqref{#2}}
+\newcommand{\Equationsand}[2]{Equations~\eqref{#1} and~\eqref{#2}}
+\newcommand{\Eqor}[2]{Eq.~\eqref{#1} or~\eqref{#2}}
+\newcommand{\Fig}[1]{Fig.~\ref{fig:#1}}
+\newcommand{\Figure}[1]{Figure.~\ref{#1}}
+\newcommand{\Figs}[2]{Figs.~\ref{#1}--\ref{#2}}
+\newcommand{\Sec}[1]{Sec.~\ref{Sec:#1}}
+\newcommand{\Secs}[2]{Secs.~\ref{#1}--\ref{#2}}
+\newcommand{\Chap}[1]{Chapter~\ref{Chap:#1}}
+\newcommand{\Tab}[1]{Table~\ref{tab:#1}}
+\newcommand{\old}[1]{
+{}}
+
+%
+\newcommand{\vaporliquid}{vapor-liquid{ }}
+%
+% units
+\newcommand{\degC}{\mbox{$^\circ$C}{}}
+\newcommand{\degF}{\mbox{$^\circ$F}{}}
+\newcommand{\bars}{\mbox{bars}{}}
+\newcommand{\meters}{\mbox{m}{}}
+\newcommand{\grams}{\mbox{g}{}}
+\newcommand{\mm}{\mbox{mm}{}}
+\newcommand{\cm}{\mbox{cm}{}}
+\newcommand{\nm}{\mbox{nm}{}}
+%\newcommand{\um}{\mbox{$\mu$m}{}}
+\newcommand{\secs}{\mbox{s}{}}
+\newcommand{\msec}{\mbox{ms}{}}
+\newcommand{\usec}{\mbox{$\mu$s}{}}
+\newcommand{\nsec}{\mbox{ns}{}}
+\newcommand{\cmpers}{\mbox{cm/s}{}}
+\newcommand{\mpers}{\mbox{m/s}{}}
+\newcommand{\ergperg}{\mbox{erg/g}{}}
+\newcommand{\ccperg}{\mbox{cm$^3$/g}{}}
+\newcommand{\gpercc}{\mbox{g/cm$^3$}{}}
+\newcommand{\gpercmsq}{\mbox{g/cm$^2$}{}}
+\newcommand{\ergpergK}{\mbox{erg/g-K}{}}
+\newcommand{\nperccpers}{\mbox{nuclei/cm$^3$-s}{}}
+\newcommand{\percc}{\mbox{/cm$^3$}{}}
+\newcommand{\perccpers}{\mbox{cm$^{-3}$s$^{-1}$}{}}
+%
+% numeral adjectives
+\newcommand{\St}{{\mbox{\small st}}}
+\newcommand{\Nd}{{\mbox{\small nd}}}
+\newcommand{\Rd}{{\mbox{\small rd}}}
+\newcommand{\Th}{{\mbox{\small th}}}
+%
+% Latin abbreviations
+\newcommand{\etc}{{\em etc}}
+\newcommand{\ie}{{\em i.e., }}
+\newcommand{\Ie}{{\em I.e., }}
+\newcommand{\cf}{{\em cf.~}}
+\newcommand{\etal}{{\em et~al.}}
+\newcommand{\eg}{{\em e.g., }}
+\newcommand{\viz}{{\em viz., }}
+\newcommand{\vs}{{\em vs.~}}
+\newcommand{\via}{{\em via }}
+\newcommand{\viceversa}{{\em vice-versa}}
+%
+% For the following, math mode is assumed.
+%
+% Regular derivatives
+\newcommand{\oderiv}[2]{{\displaystyle \frac{d #1}{d #2}}}
+\newcommand{\pderiv}[2]{{\displaystyle \frac{\partial {#1}}{\partial {#2}}}}
+\newcommand{\pderivc}[3]{{\displaystyle \left(\pderiv{#1}{#2}\right)_{#3}}}
+%
+% Thermodynamic derivatives
+\newcommand{\thermoDeriv}[3]{{\displaystyle \left(\frac{\partial {#1}}{\partial {#2}}\right)_{#3}}}
+\newcommand{\thermoDerivInline}[3]{{\displaystyle \left(\partial {#1}/\partial {#2}\right)_{#3}}}
+\newcommand{\thermoTwoDeriv}[3]{{\displaystyle \left(\frac{\partial^2 {#1}}{\partial {#2}^2}\right)_{#3}}}
+\newcommand{\thermoTwoDerivInline}[3]{{\displaystyle \left(\partial^2
+{#1}/\partial {#2}^2\right)_{#3}}}
+%
+% Ways to display fractions with the proper size
+\newcommand{\sfrac}[2]{{\textstyle \frac{#1}{#2}}}
+\newcommand{\bfrac}[2]{{\displaystyle \frac{#1}{#2}}}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Notation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\Dtilde}{\tilde{\mathcal{D}}}
+% Riemann problem notation 
+\newcommand{\Jfr}{J_{\mbox{\scriptsize fr}}}
+\newcommand{\Jss}{J_{\mbox{\scriptsize ss}}}
+\newcommand{\Mfr}{M_{\mbox{\scriptsize fr}}}
+\newcommand{\Mss}{M_{\mbox{\scriptsize ss}}}
+\newcommand{\Ifr}{I_{\mbox{\scriptsize fr}}}
+\newcommand{\Iss}{I_{\mbox{\scriptsize ss}}}
+\newcommand{\ufr}{u_{\mbox{\scriptsize fr}}}
+\newcommand{\uss}{u_{\mbox{\scriptsize ss}}}
+\newcommand{\Pfr}{P_{\mbox{\scriptsize fr}}}
+\newcommand{\Pss}{P_{\mbox{\scriptsize ss}}}
+\newcommand{\Dfr}{D_{\mbox{\scriptsize fr}}}
+\newcommand{\Dss}{D_{\mbox{\scriptsize ss}}}
+%
+% Important cluster and droplet sizes and rates
+\newcommand{\ivapor}{i_v}
+\newcommand{\imax}{i_{\max}}
+\newcommand{\icrit}{i_*}
+\newcommand{\mcrit}{m_*}
+\newcommand{\rcrit}{r_*}
+\newcommand{\idrop}{i_o}
+\newcommand{\mdrop}{m_o}
+\newcommand{\rdrop}{r_o}
+\newcommand{\dsize}{i_d}
+\newcommand{\dmass}{m_d}
+\newcommand{\dradius}{r_d}
+\newcommand{\dtemp}{T_d}
+\newcommand{\igrowth}{\Omega_i}
+\newcommand{\mgrowth}{\Omega_m}
+\newcommand{\rgrowth}{\Omega_r}
+\newcommand{\ratevars}{{\bf \Lambda}}
+\newcommand{\ratecoeffs}{{\bf R}}
+\newcommand{\corrfac}{\Gamma}
+%
+% Reduced and dimensionless variables
+\newcommand{\Phat}{\widehat{P}}
+\newcommand{\Vhat}{\widehat{V}}
+\newcommand{\That}{\widehat{T}}
+\newcommand{\Stilde}{\widetilde{S}}
+\newcommand{\Etilde}{\widetilde{E}}
+\newcommand{\CVtilde}{\widetilde{C}_V}
+\newcommand{\Btilde}[1]{\widetilde{B}_{#1}}
+%
+\newcommand{\Tref}{T_{\mbox{\scriptsize ref}}}
+\newcommand{\Trefscr}{T_{\mbox{\scriptsize ref}}}
+\newcommand{\Reff}{R_{\mbox{\scriptsize eff}}}
+\newcommand{\State}{{\bf U}}
+\newcommand{\state}{U}
+\newcommand{\Flux}{{\bf f}}
+\newcommand{\Numflux}{{\bf F}}
+\newcommand{\massflux}{{\cal M}}
+\newcommand{\entropy}{S}
+\newcommand{\sat}{{\cal S}}
+\newcommand{\Sonebar}{\overline{\cal S}_1}
+\newcommand{\Sonehat}{\widehat{\cal S}_1}
+\newcommand{\Hug}{{\cal H}}
+\newcommand{\Kn}{\mbox{\em Kn}}
+\newcommand{\smallKn}{\mbox{\small\em Kn}}
+\newcommand{\QN}[2]{\frac{Q_{#1}^{#2}}{{#2}!}}
+\newcommand{\sumto}[2]{\sum_{{#1}=1}^{#2}}
+\newcommand{\sumtoinf}[1]{\sum_{{#1}=1}^{\infty}}
+\newcommand{\fprime}[1]{f_{#1}^\prime}
+\newcommand{\Nbar}[1]{\overline{N}_{#1}}
+\newcommand{\nbar}[1]{\overline{n}_{#1}}
+\newcommand{\mubar}[1]{\overline{\mu}_{#1}}
+\newcommand{\Gbar}{\overline{G}}
+\newcommand{\Cbar}[1]{\overline{C}_{#1}}
+\newcommand{\ubar}{\overline{u}}
+\newcommand{\muo}[1]{\mu_{#1}^{o}}
+\newcommand{\muos}[1]{\mu_{#1,s}^{o}}
+\newcommand{\nis}[1]{n_{#1,s}}
+\newcommand{\licubed}{\lambda_{i}^{3}}
+%
+\newcommand{\nhat}[1]{\widehat{n}_{#1}}
+\newcommand{\Chat}[1]{\widehat{C}_{#1}}
+\newcommand{\expten}[1]{\cdot 10^{#1}}
+%
+% Formation energies
+\newcommand{\dG}[1]{\Delta G_{#1}}
+\newcommand{\dGs}[1]{\Delta G_{#1,s}}
+\newcommand{\dGhat}[1]{\Delta\widehat{G}_{#1}}
+%
+% Nucleation notation
+\newcommand{\Jminus}[1]{J_{#1-{\scriptscriptstyle 1/2}}}
+\newcommand{\Jplus}[1]{J_{#1+{\scriptscriptstyle 1/2}}}
+\newcommand{\JminusInline}[1]{J_{#1-1/2}}
+\newcommand{\JplusInline}[1]{J_{#1+1/2}}
+\newcommand{\timelag}[1]{\tau_{#1}}
+\newcommand{\zel}{Z_{\icrit}}
+%
+% substances
+\newcommand{\noctane}{\mbox{$n$-oc\-tane}{}}
+\newcommand{\isooctane}{\mbox{iso-oc\-tane}{}}
+\newcommand{\nhexane}{\mbox{$n$-hex\-ane}{}}
+\newcommand{\nnonane}{\mbox{$n$-no\-nane}{}}
+\newcommand{\ndecane}{\mbox{$n$-de\-cane}{}}
+\newcommand{\nalkanes}{\mbox{$n$-al\-kanes}{}}
+\newcommand{\nitrogen}{\mbox{N$_2$}{}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+
+\newcommand{\FronTier}{\textit{Fron\hspace{-2pt}T\hspace{-1pt}ier\hspace{2pt}}}
+
+%From amsart.cls
+%\newenvironment{pf}{\proof[\proofname]}{\endproof}
+%\newenvironment{pf*}[1]{\proof[#1]}{\endproof}
+ 
+%{\theoremstyle{plain}
+%\newtheorem{thm}{Theorem}[section]
+%\newtheorem{thm}{Theorem}
+%\newtheorem{prop}[thm]{Proposition}
+%\newtheorem{cor}[thm]{Corollary}
+%\newtheorem{lem}[thm]{Lemma}
+%\newtheorem{conj}[thm]{Conjecture}
+%}
+  
+%{\theoremstyle{definition}
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{assump}[thm]{Assumption}
+%}
+   
+%{\theoremstyle{remark}
+%\newtheorem{rem}{Remark}
+%\newtheorem{notation}{Notation}
+%\newtheorem{example}{Example}
+%\newtheorem{summary}{Summary}
+%}
+%\renewcommand{\therem}{}
+%\renewcommand{\theexample}{}
+%\renewcommand{\thesummary}{}
+
+
+

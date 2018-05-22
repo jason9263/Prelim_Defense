@@ -1,0 +1,109 @@
+
+For each independent scalar hyperbolic equation $u_t + f(u)_x = 0$, 
+\begin{equation}
+u_{t}|_{x = x_{j}} \approx \frac{1}{\Delta x}(f_{j + \frac{1}{2}} - f_{j - \frac{1}{2}})
+\end{equation}
+where $\{ f_{j + \frac{1}{2}}\} $ are reconstructed value of $f(u)$ at 
+$u_{j + \frac{1}{2}}$ with WENO scheme. 
+Discretize the space into uniform intervals of size $\Delta x$ and
+denote $x_{j} = j\Delta x$, $u_{j} = u(x_{j})$ and $f_{j} = f(u_{j})$.
+Given a general flux $f(u)$, it can be splitted into two parts for stability 
+purpose 
+\begin{equation}
+f(u) = f^{+}(u) + f^{-}(u)
+\end{equation}
+where $\frac{df^{+}(u)}{du} \geq 0$ and $\frac{df^{-}(u)}{du} \leq 0$
+are monotone functions. 
+The commonly used flux splitting is the Lax-Friedrichs splitting 
+\begin{equation}
+f^{\pm}(u) = \frac{1}{2}(f(u) \pm \alpha u)
+\end{equation}
+where $\alpha = \max_{u}|f^{'}(u)|$ and the maximum is taken over the whole 
+relevant range of $u$. 
+The reconstruction for $f^{+}(u)$ uses a biased stencil with one more point 
+to the left and that for $f^{-}(u)$ uses a biased stencil with one more point 
+to the right to obey correct upwinding. 
+Let $\hat{f}_{j+\frac{1}{2}}^{+}$ and $\hat{f}_{j+\frac{1}{2}}^{-}$ be the 
+numerical fluxes obtained from the positive and negative parts respectively, 
+then
+\begin{equation}
+\hat{f}_{j + \frac{1}{2}} = \hat{f}_{j + \frac{1}{2}}^{+} + \hat{f}_{j + \frac{1}{2}}^{-}.
+\end{equation}
+Consider the $r$th-order approximate of $f_{j + \frac{1}{2}}^{+}$ at $k$-th 
+candidate stencils denoted by $S_{k},\ k=0,\cdots,r-1$
+\begin{equation}
+S_{k} = (x_{j+k-r+1},\cdots,x_{j+k}),
+\end{equation}
+then the $r$th-order approximation is
+\begin{equation}
+q_{k}^{r}(f_{j+k-r+1},\cdots,f_{j+k}) = \sum_{l=j+k-r+1}^{j+k}a_{k,l}^{r}f_{l}
+\label{eqn:r_inter}
+\end{equation}
+where$\{a_{k,l}^{r}\} $ are constant coefficients. 
+When $r=3$, it gives three groups of approximation 
+\begin{eqnarray}
+\begin{aligned}
+q_{0}^{3} &= \frac{1}{3}f_{j-2}-\frac{7}{6}f_{j-1}+\frac{11}{6}f_{j}\\
+q_{1}^{3} &= -\frac{1}{6}f_{j-2}+\frac{5}{6}f_{j-1}+\frac{1}{3}f_{j}\\
+q_{2}^{3} &= \frac{1}{3}f_{j-2}+\frac{5}{6}f_{j-1}-\frac{1}{6}f_{j}
+\end{aligned}
+\end{eqnarray}
+
+WENO reconstructed the value of function $f^{+}\left(u\right)$ at
+$u_{j+\frac{1}{2}}$ uses all the $r$ candidate stencils, which all
+together contain $\left(2r-1\right)$ grid values of $f$ to give
+a $\left(2r-1\right)$th-order approximation
+\begin{equation}
+\hat{f}_{j+\frac{1}{2}}^{+}=q_{r-1}^{2r-1}\left(f_{j-r+1},\cdots,f_{j+r-1}\right)
+\end{equation}
+and it can also be represented as the combination of $r$ polynomials
+\begin{equation}
+\hat{f}_{j+\frac{1}{2}}^{+}=\sum_{k=0}^{r-1}\omega_{k}q_{k}^{r}\left(f_{j+k-r+1},\cdots,f_{j+k}\right).
+\end{equation}
+Through simple algebra, coefficients $\left\{ C_{k}^{r}\right\} $
+can be derived from
+\begin{equation}
+q_{r-1}^{2r-1}\left(f_{j-r+1},\cdots,f_{j+r-1}\right)=\sum_{k=0}^{r-1}C_{k}^{r}q_{k}^{r}\left(f_{j+k-r+1},\cdots,f_{j+k}\right)
+\end{equation}
+and $\sum_{k=0}^{r-1}C_{k}^{r}=1$. When $r=3$, this gives
+\begin{equation}
+C_{0}^{3}=\frac{1}{10},C_{1}^{3}=\frac{6}{10},C_{2}^{3}=\frac{3}{10}.
+\end{equation}
+The choice of weight $\left\{ \omega_{k}\right\} $ based on $\left\{ C_{k}^{r}\right\} $
+and follows a convex combination
+\begin{equation}
+\omega_{k}\geq0,\ \sum_{k=0}^{r-1}\omega_{k}=1
+\end{equation}
+for stability and consistency. The weight $\omega_{k}$ for stencil
+$S_{k}$ is defined by
+\begin{equation}
+\omega_{k}=\frac{\alpha_{k}}{\alpha_{0}+\cdots+\alpha_{r-1}}
+\end{equation}
+where
+\begin{equation}
+\alpha_{k}=\frac{C_{k}^{r}}{\left(\epsilon+IS_{k}\right)^{2}}
+\end{equation}
+$\epsilon>0$ is a small value and usually set as $10^{-6}$, $\left\{ IS_{k}\right\} $
+are the smooth indicators of the stencil $S_{k}$ which has the interpolation
+polynomial $q_{k}\left(x\right)$
+\begin{equation}
+IS_{k}=\sum_{l=1}^{r-1}\int_{x_{j-\frac{1}{2}}}^{x_{j+\frac{1}{2}}}h^{2l-1}\left(q_{k}^{\left(l\right)}\right)^{2}dx\label{eq:smooth}
+\end{equation}
+where $q_{k}^{\left(l\right)}$ is the $l$th-derivative of $q_{k}\left(x\right)$
+and \Eq{eq:smooth} is the sum of the $L^{2}$ norms of all the
+derivatives of the interpolation polynomial $q_{k}\left(x\right)$
+over the interval $\left(x_{j-\frac{1}{2}},x_{j+\frac{1}{2}}\right)$.
+When $r=3$, the corresponding smooth indicators are
+\begin{equation}
+\begin{array}{c}
+IS_{0}=\frac{13}{12}\left(f_{j-2}-2f_{j-1}+f_{j}\right)^{2}+\frac{1}{4}\left(f_{j-2}-4f_{j-1}+3f_{j}\right)^{2}\\
+IS_{1}=\frac{13}{12}\left(f_{j-1}-2f_{j}+f_{j+1}\right)^{2}+\frac{1}{4}\left(f_{j-1}-f_{j+1}\right)^{2}\\
+IS_{2}=\frac{13}{12}\left(f_{j}-2f_{j+1}+f_{j+2}\right)^{2}+\frac{1}{4}\left(3f_{j}-4f_{j+1}+3f_{j+2}\right)^{2}
+\end{array}
+\end{equation}
+which gives fifth-order accurate WENO scheme. After the reconstruction
+process, the problem is simplified as an ODE
+\begin{equation}
+\frac{du}{dt}=L\left(u\right).
+\end{equation}
+
