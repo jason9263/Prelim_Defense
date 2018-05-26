@@ -25,8 +25,7 @@ for i = 1:6
         else
             
         end
-        
-        
+
     end
 end
 
@@ -73,6 +72,6 @@ plot(sigma,solution(:,6),'w');
 plot(sigma,solution(:,7),'c');
 
 ylabel('Data fraction');
-xlabel('zTcm over wTcp');
+xlabel('\sigma');
 title('Data Fraction on different nodes');
-legend('alpha_0','alpha_1','alpha_2','alpha_3','alpha_4','alpha_5','alpha_6');
+legend('\alpha_0','\alpha_1','\alpha_2','\alpha_3','\alpha_4','\alpha_5','\alpha_6');

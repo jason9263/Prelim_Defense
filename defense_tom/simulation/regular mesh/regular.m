@@ -25,9 +25,9 @@ plot(sigma,solution(:,2),'g');
 plot(sigma,solution(:,3),'b');
 
 ylabel('Data fraction');
-xlabel('zTcm over wTcp');
+xlabel('\sigma');
 title('Data Fraction on different nodes');
-legend('alpha_0','alpha_1','alpha_3');
+legend('\alpha_0','\alpha_1','\alpha_3');
 %%
 clear
 clc
@@ -61,9 +61,9 @@ plot(sigma,solution(:,3),'b');
 plot(sigma,solution(:,4),'k');
 
 ylabel('Data fraction');
-xlabel('zTcm over wTcp');
+xlabel('\sigma');
 title('Data Fraction on different nodes');
-legend('alpha_0','alpha_1','alpha_3','alpha_5');
+legend('\alpha_0','\alpha_1','\alpha_3','\alpha_5');
 %%
 clear
 clc
@@ -97,9 +97,9 @@ plot(sigma,solution(:,3),'b');
 plot(sigma,solution(:,4),'k');
 
 ylabel('Data fraction');
-xlabel('zTcm over wTcp');
+xlabel('\sigma');
 title('Data Fraction on different nodes');
-legend('alpha_0','alpha_1','alpha_4','alpha_7');
+legend('\alpha_0','\alpha_1','\alpha_4','\alpha_7');
 %%
 clear
 clc
@@ -130,8 +130,8 @@ plot(sigma,solution(:,2),'g');
 plot(sigma,solution(:,3),'b');
 
 ylabel('Data fraction');
-xlabel('zTcm over wTcp');
+xlabel('\sigma');
 title('Data Fraction on different nodes');
-legend('alpha_0','alpha_1','alpha_5');
+legend('\alpha_0','\alpha_1','\alpha_5');
 %%
 
