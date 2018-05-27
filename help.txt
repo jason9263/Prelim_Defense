@@ -1,0 +1,22 @@
+\begin{empheq}[left=\empheqlbrace]
+{align}
+\alpha_{0} \omega T_{cp} = T_{f,m}\\
+\alpha_{0} \omega T_{cp} = T_{f,m}\\
+\alpha_{1} \omega T_{cp} = T_{f,m}\\
+\alpha_{2} \omega T_{cp} = T_{f,m}\\
+\alpha_{1}zT_{cm} + \alpha_{3}\omega T_{cp} = T_{f,m}\\
+\alpha_{0} + \alpha_{1} + \alpha_{2} + \alpha_{3} = 1\\
+\sigma = \frac{zT_{cm}}{\omega T_{cp}}\\
+0 < \sigma < 1 \\
+0 < \alpha_{0}, \alpha_{1}, \alpha_{2}, \alpha_{3}  < 1\\
+\end{empheq}
+\\
+
+
+\begin{empheq}[left=\empheqlbrace]
+{align}
+
+
+\end{empheq}
+\\
+
