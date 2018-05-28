@@ -22,7 +22,6 @@ for i = 1:len
     
     tmpj = [1,tmpj];
     tmpj = [tmpj,2];
-    tmpj
     
     Y{i+1} = tmpj;
 end
@@ -31,7 +30,7 @@ end
 minsig = 0.01;
 maxsig = 0.99;
 
-[x,y] = meshgrid(0.01:0.01:0.99, 3:3:39);
+[x,y] = meshgrid(minsig:0.01:maxsig, 3:3:24);
 
 z = zeros(size(x));
 sizex = size(x);
@@ -47,13 +46,11 @@ for i = 1: sizex(1)
     end
 end
 colormap default
-surf(x,y,z,'FaceAlpha',0.5);
+surf(x,y,z,'FaceAlpha',0.7);
 
-
-xlabel('sigma value zTcm over wTcp');
-ylabel('number of cores in the 2*n regular mesh');
+xlabel('\sigma');
+ylabel('Number of cores');
 zlabel('Speedup');
+title('Speedup vs \sigma and Number of cores');
 colorbar
-%%
-
 end

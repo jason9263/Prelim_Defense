@@ -64,10 +64,10 @@ for i = 1: sizex(1)
 end
 
 surf(x,y,z,'FaceAlpha',0.7);
-xlabel('sigma value zTcm over wTcp');
-ylabel('number of cores in the 2*n regular mesh');
+xlabel('\sigma value zTcm over wTcp');
+ylabel('Number of cores');
 zlabel('Speedup');
-title('Speedup vs sigma value and number of cores');
+title('Speedup vs \sigma, Number of cores');
 colorbar
 %%
 end

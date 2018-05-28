@@ -20,3 +20,12 @@
 \end{empheq}
 \\
 
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\begin{proof}[$\det A \neq 0$]
+  \begin{equation*}
+
+
+     \qedhere
+  \end{equation*}
+\end{proof}

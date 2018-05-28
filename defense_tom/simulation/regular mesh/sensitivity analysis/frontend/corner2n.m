@@ -32,7 +32,7 @@ end
 minsig = 0.01;
 maxsig = 0.99;
 
-[x,y] = meshgrid(0.01:0.01:0.99, 2:2:36);
+[x,y] = meshgrid(0.01:0.01:0.99, 2:2:20);
 
 z = zeros(size(x));
 sizex = size(x);
@@ -49,10 +49,10 @@ for i = 1: sizex(1)
 end
 
 surf(x,y,z,'FaceAlpha',0.7);
-xlabel('sigma value zTcm over wTcp');
-ylabel('number of cores in the 2*n regular mesh');
+xlabel('\sigma');
+ylabel('Number of cores');
 zlabel('Speedup');
-title('Speedup vs sigma value and number of cores');
+title('Speedup vs \sigma, Number of cores');
 colorbar
 %%
 end
