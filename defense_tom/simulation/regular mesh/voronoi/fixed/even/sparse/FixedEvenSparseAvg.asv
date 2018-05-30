@@ -87,15 +87,13 @@ Z = [7.8400 9.2200 10.0800 11.9900 13.1900 14.0400];
 
 figure
 hold on
-grid on
 plot(X,Y);
-xlabel('Longitude number of cores');
+xlabel('Number of cores');
 ylabel('Saved Percentage');
-title('RVDA Saved Percentage');
 ylim([0,0.5]);
 hold off
 
-%%
+
 figure
 hold on
 plot(X,Z);
