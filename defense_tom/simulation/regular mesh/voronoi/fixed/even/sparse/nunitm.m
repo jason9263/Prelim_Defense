@@ -22,7 +22,7 @@ Y = times';
 hold on
 plot(X,Y);
 
-xlabel('zTcm to wTcp');
+xlabel('\sigma');
 ylabel('Speedup');
 
 end

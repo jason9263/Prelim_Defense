@@ -79,7 +79,7 @@ end
 %
 xlabel('longitude geographical coordinate');
 ylabel('latitude geographical coordinate');
-title('Voronoi Division');
+title
 hold off
 
 %%
