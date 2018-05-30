@@ -70,7 +70,7 @@ X = minr:0.01:maxr;
 Y = times';
 hold on
 plot(X,Y);
-xlabel('The ratio of zTcm to wTcp');
+xlabel('\sigma');
 ylabel('Speedup');
 legend('Speedup with frontend','Speedup without frontup');
 
