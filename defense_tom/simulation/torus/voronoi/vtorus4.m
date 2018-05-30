@@ -46,10 +46,14 @@ for i = 50:100
         y=(R+r*cos(v))*sin(u);
         z=r*sin(v);
         
-        if mod(index,10) == 0
-            plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-        else
-            plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        
+        if minv <= 15
+            if mod(index,10) == 0
+                plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+            else
+                plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+            end
+            
         end
         
     end
@@ -81,3 +85,6 @@ z=r.*sin(v);
 mesh(x,y,z);
 view([-52,64]);
 
+xlabel('longitude torus geographical index');
+ylabel('latitudinal torus geographical index');
+title('Placement of Processors');

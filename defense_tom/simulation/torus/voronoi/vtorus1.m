@@ -85,5 +85,7 @@ X = [50 100 100 50 50 ]';
 Y = [50 50 100 100 50 ]';
 
 plot(X,Y,'r-');
-
+xlabel('longitude geographical index');
+ylabel('latitudinal geographical index');
+title('Placement of Processors');
 hold off

@@ -40,6 +40,8 @@ view([-52,64]);
 
 h=gca;
 
+grid on
+
 plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(index,:)],'MarkerFaceColor',[mcolor(index,:)]);
 plot3(x,y,z,'bo');
 
