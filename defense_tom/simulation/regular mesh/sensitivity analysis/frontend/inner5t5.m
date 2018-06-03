@@ -53,8 +53,8 @@ for i = 1: sizex(1)
             tmpline = [tmpline (tmpy-X(tmp-1))];
         end
         
-        B = sigmaB(tmpline);
-        A = sigmaA(x(i,j),tmpline);
+        B = sigmaB_no(tmpline);
+        A = sigmaA_no(x(i,j),tmpline);
         
         times = A\B;
         
@@ -64,7 +64,7 @@ for i = 1: sizex(1)
 end
 
 surf(x,y,z,'FaceAlpha',0.7);
-xlabel('\sigma value zTcm over wTcp');
+xlabel('\sigma');
 ylabel('Number of cores');
 zlabel('Speedup');
 title('Speedup vs \sigma, Number of cores');
