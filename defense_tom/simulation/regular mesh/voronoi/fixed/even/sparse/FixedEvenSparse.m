@@ -100,8 +100,8 @@ for i = 1:numseed
     
     sumcore = sumcore + sum(title);
     
-    nunitm(title);
-    %nunitm_no(title);
+    %nunitm(title);
+    nunitm_no(title);
     
 end
 (size*size - sumcore)/(size*size)

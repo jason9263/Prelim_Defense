@@ -21,9 +21,9 @@ Y = times';
 hold on
 plot(X,Y);
 
-xlabel('zTcm to wTcp');
-ylabel('SpeedUp');
-
+xlabel('\sigma');
+ylabel('Speedup');
+title('Speedup vs \sigma');
 end
 
 
