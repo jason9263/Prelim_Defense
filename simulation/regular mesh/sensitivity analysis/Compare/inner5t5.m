@@ -4,7 +4,7 @@ function inner5t5
 %sensitivity analysis of the regular mesh
 clear
 clc
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 X = [];
 X = [1;5;13;21;25];
 
@@ -64,7 +64,7 @@ for i = 1: sizex(1)
 end
 
 surf(x,y,z,'FaceAlpha',0.7);
-xlabel('\sigma value zTcm over wTcp');
+xlabel('\sigma');
 ylabel('Number of cores');
 zlabel('Speedup');
 title('Speedup vs \sigma, Number of cores');

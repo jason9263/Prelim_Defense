@@ -3,7 +3,7 @@
 
 clear
 clc
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 X = [];
 X = [1;3;6;10;15;19;22;24;25];
 Y = cell(1,9);
