@@ -1,4 +1,4 @@
-function corner2n
+
 %%
 %sensitivity analysis of the regular mesh
 clear
@@ -47,12 +47,40 @@ for i = 1: sizex(1)
         z(i,j)  = 1/( times(1));
     end
 end
-
+figure
+hold on
 surf(x,y,z,'FaceAlpha',0.7);
 xlabel('\sigma');
 ylabel('Number of cores');
 zlabel('Speedup');
 title('Speedup vs \sigma, Number of cores');
 colorbar
+
+hold off
 %%
+figure
+hold on
+x = [0.01,0.1,0.3,0.6,0.99];
+y = 2:2:20;
+sx = size(x);
+for i = 1:sx(2)
+    z = [];
+    for j = 2:2:20
+        tmp = j/2;
+        B = sigmaB(Y{tmp});
+        A = sigmaA(x(i),Y{tmp});
+        times = A\B;
+        tmpz  = 1/( times(1));
+        z = [z;tmpz];
+    end
+    plot(y,z);
 end
+
+grid on
+xlabel('Number of cores');
+ylabel('Speedup');
+title('Speedup vs Number of cores');
+legend('\sigma = 0.01','\sigma = 0.1','\sigma = 0.3','\sigma = 0.6','\sigma = 0.99');
+ylim([0,20]);
+hold off
+

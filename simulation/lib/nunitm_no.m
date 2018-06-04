@@ -24,6 +24,7 @@ X = minr:0.01:maxr;
 Y = times';
 hold on
 plot(X,Y);
-
+xlabel('\sigma');
+ylabel('Speedup');
 end
 

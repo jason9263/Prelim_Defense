@@ -1,7 +1,8 @@
 function diffcornerboun
 %%boundary
-clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
+clc
+
 X = [];
 X = [3;X];
 
@@ -101,8 +102,8 @@ end
 
 
 surf(x,y,z1-z2);
-xlabel('sigma value zTcm over wTcp');
-ylabel('number of cores in the 2*n regular mesh');
+xlabel('\sigma');
+ylabel('Number of cores in the 2*n regular mesh');
 zlabel('Speedup');
 colorbar
 
