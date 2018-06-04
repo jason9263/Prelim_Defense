@@ -1,7 +1,7 @@
 %Pos11-12
 clc
 clear
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 rA = [1 2 3 4];
 rB = [1 2 3 4 5 ];
 

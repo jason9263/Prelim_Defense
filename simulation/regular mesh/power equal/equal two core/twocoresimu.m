@@ -1,6 +1,6 @@
 %TwocoreSimu
 function twocoresimu(rA,rB,nA,nB,rC,alpha1,alpha2)
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 times= [];
 basictime = [];
 jtime = [];
