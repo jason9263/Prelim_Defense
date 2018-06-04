@@ -1,6 +1,5 @@
 function inner5t5
-addpath(genpath('D:\Dropbox\Prelim_Defense\defense_tom\simulation\lib'));
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 %%
 %sensitivity analysis of the regular mesh
 clear

@@ -1,7 +1,7 @@
 function diffcornerboun
 %%boundary
 clc
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 X = [];
 X = [3;X];
 

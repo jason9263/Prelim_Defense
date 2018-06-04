@@ -4,7 +4,7 @@ function inner5t5
 %sensitivity analysis of the regular mesh
 clear
 clc
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 X = [];
 X = [1;5;13;21;25];
 

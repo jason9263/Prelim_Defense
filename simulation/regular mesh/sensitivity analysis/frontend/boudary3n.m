@@ -1,8 +1,7 @@
 function boudary3n
 clear
 clc
-addpath(genpath('D:\Dropbox\Prelim_Defense\defense_tom\simulation\lib'));
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 X = [];
 X = [1;3;6;9;12;15;18;21;24];
 

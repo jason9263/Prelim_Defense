@@ -3,8 +3,7 @@ function corner2n
 %sensitivity analysis of the regular mesh
 clear
 clc
-addpath(genpath('D:\Dropbox\Prelim_Defense\defense_tom\simulation\lib'));
-
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 X = [];
 X = [2;X];
 
