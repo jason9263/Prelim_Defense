@@ -1,12 +1,23 @@
 %%
 clear 
 clc
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 figure
 hold on
 tline = [4 8 12 10 6 2];
-%nunitm(tline);
-nunitm_no(tline);
-%legend('With Front-end','Wihtout Front-end');
+nunitm(tline);
+%nunitm_no(tline);
+grid on
+legend('With Front-end');
+title('Speedup vs \sigma');
+hold off
+
+figure
+hold on
+fraction(tline);
+grid on
+title('Data Fraction vs \sigma');
+legend('With Front-end');
 hold off
 
 % figure
@@ -15,5 +26,5 @@ hold off
 % nunitm(tline);
 % nunitm_no(tline);
 % legend('With Front-end','Wihtout Front-end');
-
+%%
 

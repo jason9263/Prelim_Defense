@@ -11,7 +11,7 @@ maxr = 0.99;
 for sigma = minr:0.01:maxr
     
     B = sigmaB(tline);
-    A= sigmaA(sigma,tline);
+    A = sigmaA(sigma,tline);
     X = A\B;
     times = [times;1/X(1)];
     

@@ -1,3 +1,4 @@
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 times= [];
 minr = 0.01;
 maxr = 0.99;
