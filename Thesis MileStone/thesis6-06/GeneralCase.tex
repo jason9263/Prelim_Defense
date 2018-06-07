@@ -1,0 +1,38 @@
+\section{General Case With Front-end Processors}
+\begin{equation}
+{
+\left[ \begin{array}{ccccccc}
+1 & m_{1} & m_{2} & \cdots & m_{n-2} & m_{n-1} & m_{n}\\
+1 & -1 & 0 & \cdots& 0 & 0 & 0\\
+0 & \sigma -1 & 1 & \cdots & 0 & 0 & 0 \\
+0 & \sigma -1 & \sigma & 1 & 0 & \cdots & 0 \\
+0 & \sigma -1 & \sigma & \sigma & 1 & 0 & 0 \\
+\vdots & \vdots & \vdots  &   \vdots & \ddots & \ddots\\
+0 & \sigma -1 & \sigma & \cdots & \sigma & \sigma & 1
+\end{array} 
+\right ]} \times \left[ \begin{array}{c}
+\alpha_{l_{0}} \\
+\alpha_{l_{1}} \\
+\alpha_{l_{2}} \\
+\alpha_{l_{3}} \\
+\vdots \\
+\alpha_{l_{n-1}}\\
+\alpha_{l_{n}}
+\end{array} 
+\right ] = \left[ \begin{array}{c}
+1 \\
+0 \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{array} 
+\right ]
+\end{equation}
+
+The $m_{1}$, $m_{2}$, $\cdots$, $m_{n}$ are the number of processors on the $level_{1}$, $level_{2}$, $\cdots$, $level_{n}$.   Also, the $\alpha_{l0}$, $\alpha_{l1}$,  $\cdots$, $\alpha_{ln}$ are corresponding workload fraction.  
+
+Finally, the speedup is:
+$$Speedup = \frac{T_{f, 0}}{T_{f, n}}= \frac{\omega T_{cp}}{\alpha_{0}\omega T_{cp}} = \frac{1}{\alpha_{0}} = \left | -\det A \right |$$.
+\newpage 
+

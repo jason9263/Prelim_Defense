@@ -1,0 +1,72 @@
+\contentsline {chapter}{\numberline {}{List of Figures}}{vi}
+\contentsline {chapter}{\numberline {}{List of Tables}}{vii}
+\contentsline {chapter}{\numberline {}{Acknowledgements}}{viii}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Problem Description}{3}
+\contentsline {section}{\numberline {2.1}Problem Background}{3}
+\contentsline {section}{\numberline {2.2}Definitions and Assumption}{5}
+\contentsline {subsection}{\numberline {2.2.1}Notions}{7}
+\contentsline {chapter}{\numberline {3}Regular network}{9}
+\contentsline {section}{\numberline {3.1}With Front-end Scenario}{9}
+\contentsline {subsection}{\numberline {3.1.1}Data Injection on The Corner Processor}{10}
+\contentsline {subsubsection}{2*2 Regular Network}{10}
+\contentsline {subsubsection}{2*3 Regular Network}{14}
+\contentsline {subsection}{\numberline {3.1.2}Data Injection On The Boundary Processor}{28}
+\contentsline {subsection}{\numberline {3.1.3}Data Injection On The Inner Grid Processor}{32}
+\contentsline {subsection}{\numberline {3.1.4}Sensitivity Analysis With Front-end Processors}{36}
+\contentsline {subsubsection}{Data Injection On The Corner Processor}{37}
+\contentsline {subsubsection}{Data Injection On The Boundary Processor}{38}
+\contentsline {subsubsection}{Data Injection On The Inner Grid Processor}{40}
+\contentsline {subsection}{\numberline {3.1.5}Multi-source Even Data Fraction}{41}
+\contentsline {subsubsection}{Situation \uppercase {i}}{42}
+\contentsline {subsubsection}{Situation \uppercase {ii}}{49}
+\contentsline {subsubsection}{Situation \uppercase {iii}}{55}
+\contentsline {subsection}{\numberline {3.1.6}Multi-source Different Data Fraction}{55}
+\contentsline {section}{\numberline {3.2}Without Front-end Scenario}{58}
+\contentsline {subsection}{\numberline {3.2.1}Data Injection on The Corner Processor}{58}
+\contentsline {subsubsection}{2*2 Regular Network}{58}
+\contentsline {subsubsection}{2*n Regular Network}{66}
+\contentsline {subsubsection}{m*n Regular Network}{70}
+\contentsline {subsection}{\numberline {3.2.2}Data Injection on The Boundary Processor}{71}
+\contentsline {subsection}{\numberline {3.2.3}Data Injection on The Inner Grid Processor}{74}
+\contentsline {subsection}{\numberline {3.2.4}Sensitivity Analysis Without Front-end Processors}{76}
+\contentsline {subsubsection}{Data Injection on The Corner Processor}{76}
+\contentsline {subsubsection}{Data Injection on The Boundary Processor}{77}
+\contentsline {subsubsection}{Data Injection on The Inner Grid Processor}{78}
+\contentsline {subsection}{\numberline {3.2.5}Multi-source Even Data Fraction}{79}
+\contentsline {subsection}{\numberline {3.2.6}Multi-source Different Data Fraction}{79}
+\contentsline {chapter}{\numberline {4}Toroidal Rectangle Network}{82}
+\contentsline {section}{\numberline {4.1}Toroidal Rectangle Network Notions}{82}
+\contentsline {section}{\numberline {4.2}With Front-end Scenario}{84}
+\contentsline {subsection}{\numberline {4.2.1}Data Injection On The Grid Processor}{84}
+\contentsline {subsection}{\numberline {4.2.2}Sensitivity Analysis of Toroidal Rectangle Network}{87}
+\contentsline {subsection}{\numberline {4.2.3}Multi-source Even Data Injection}{87}
+\contentsline {subsection}{\numberline {4.2.4}Multi-source Different Data Injection}{89}
+\contentsline {section}{\numberline {4.3}Without Front-end Scenario}{90}
+\contentsline {subsection}{\numberline {4.3.1}Data Injection On The Grid Processor}{90}
+\contentsline {subsection}{\numberline {4.3.2}Sensitivity Analysis of Toroidal Rectangle Network}{92}
+\contentsline {subsection}{\numberline {4.3.3}Multi-source Even Data Injection}{93}
+\contentsline {subsection}{\numberline {4.3.4}Multi-source Different Data Injection}{94}
+\contentsline {section}{\numberline {4.4}Comparison Result}{95}
+\contentsline {subsection}{\numberline {4.4.1}Comparison Result Between Regular Mesh and Toroidal With Same Processors Number}{95}
+\contentsline {subsection}{\numberline {4.4.2}Comparison Result With Corner Processor and Inner Grid Processor}{96}
+\contentsline {subsection}{\numberline {4.4.3}Comparison Result Between Front-end Processor and Without Front-end Processor}{98}
+\contentsline {subsubsection}{Data Injection On the Corner Processor}{98}
+\contentsline {section}{\numberline {4.5}Store and Froward Switching}{104}
+\contentsline {chapter}{\numberline {5}Hypercube Network}{105}
+\contentsline {section}{\numberline {5.1}With Front-end Scenario}{105}
+\contentsline {subsection}{\numberline {5.1.1}Data Injection On The Grid Processor}{106}
+\contentsline {subsection}{\numberline {5.1.2}Sensitivity Analysis With Front-end Processors}{108}
+\contentsline {subsection}{\numberline {5.1.3}Multi-source Even Data Fraction}{109}
+\contentsline {subsection}{\numberline {5.1.4}Multi-source Different Data Fraction}{110}
+\contentsline {section}{\numberline {5.2}Without Front-end Scenario}{111}
+\contentsline {subsection}{\numberline {5.2.1}Data Injection On The Grid Processor}{111}
+\contentsline {subsection}{\numberline {5.2.2}Sensitivity Analysis Without Front-end Processors}{113}
+\contentsline {subsection}{\numberline {5.2.3}Multi-source Even Data Fraction}{114}
+\contentsline {subsection}{\numberline {5.2.4}Multi-source Different Data Fraction}{115}
+\contentsline {chapter}{\numberline {6}General Network}{116}
+\contentsline {section}{\numberline {6.1}General Case With Front-end Processors}{116}
+\contentsline {section}{\numberline {6.2}General Case Without Front-end Processors}{118}
+\contentsline {chapter}{\numberline {7}Conclusion and Future work}{119}
+\contentsline {section}{\numberline {7.1}Conclusion}{119}
+\contentsline {section}{\numberline {7.2}Future Work}{120}

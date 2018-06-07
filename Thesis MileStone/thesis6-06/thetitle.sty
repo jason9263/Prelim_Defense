@@ -1,0 +1,123 @@
+% thetitle.sty  9 Jan 87  From titlepage.sty
+\gdef\@thesis{dissertation}
+\def\thesis{\gdef\@thesis{thesis}}
+\def\dissertation{\gdef\@thesis{dissertation}}
+\def\@capitalize#1#2,{\uppercase{#1}\lowercase{#2}}
+\gdef\@department{}
+\def\department#1{\gdef\@department{#1}}
+\gdef\@degree{}
+\def\degree#1{\gdef\@degree{#1}}
+\gdef\@month{}
+\def\month#1{\gdef\@month{#1}}
+\gdef\@year{}
+\def\year#1{\gdef\@year{#1}}
+\def\maketitle{
+   \titlepage
+   \let\footnotesize\footnotesize %\let\footnoterule\relax
+   \setcounter{page}{0}
+   \begin{center}
+    %\baselineskip 14.5pt
+%    \vspace*{0.1in}
+        {\Huge\bf\@title}\\[3ex]
+    A \expandafter\@capitalize\@thesis, Presented\\
+                   by    \\[3ex] 
+                \@author \\[3ex] 
+               to    \\
+    The Graduate School \\ 
+    in Partial Fulfillment of the \\
+    Requirements \\
+    for the Degree of\\
+            {\bf\@degree} \\[3ex]
+               in    \\[3ex]
+            \@department\\[3ex]
+        Stony Brook University\\[3ex]
+            \@month\ \@year
+    \end{center}
+%    \par\null
+    \endtitlepage
+    \setcounter{footnote}{0} 
+    \let\thanks\relax \let\maketitle\relax
+}
+
+\def\makecopyright{\titlepage\vspace*{\fill}
+   \begin{center}
+    \baselineskip 14.5pt 
+    Copyright \copyright\ by\\ \@author \\ \@year
+   \end{center}
+   \endtitlepage
+}
+\def\approval{\clearpage\setcounter{page}{2}
+   \begin{center}
+    \baselineskip 14.5pt 
+    {\bf Stony Brook University} \\[0.2in] 
+    The Graduate School \\[0.4in] 
+    \@author
+   \end{center} \vspace{0.2in}
+   \begin{center}	
+   {\baselineskip 14.5pt
+   We, the \@thesis\ committee for the above candidate for the \\ [0.1in]
+   \@degree\ degree, hereby recommend \\[0.1in]
+   acceptance of this \@thesis.\par}
+   \end{center}
+   \def\member##1{\rule[-0.0in]{0in}{0.0in}\\[0.03in]##1\\}
+   \begin{center}\baselineskip 18pt
+}
+\def\endapproval{
+   \end{center}\vspace{0.3in}
+   \begin{center}
+   This \@thesis\ is accepted by the Graduate School.
+   %\begin{flushright}\parbox{3in}{
+   %\raggedright
+	\begin{center}
+	\baselineskip 14.5pt
+	\member{Charles Taber\\Dean of the Graduate School}%}
+	\end{center}
+   %\end{flushright}
+   \end{center}	
+   \clearpage
+}
+
+\def\abstract{\clearpage
+   \begin{center}
+    \baselineskip 14.5pt
+    \vspace*{0.1in}
+    {\Huge Abstract of the \expandafter\@capitalize\@thesis,}\\[4ex]
+    {\Huge\bf \@title}      \\[4ex] 
+           by               \\[4ex] 
+        \@author            \\[2ex]
+        {\bf \@degree}            \\[4ex] 
+           in               \\[4ex] 
+        \@department        \\[2ex]
+    Stony Brook University  \\[2ex]
+          \@year            \\[4ex]
+%       Advisor: \advisor
+   \end{center}
+   \par\vspace{0.1in}
+   %\quotation      % commented by Wonho Oh, May 14, 1998
+}
+\def\endabstract{
+   %\endquotation   % commented by Wonho Oh, May 14, 1998
+   \par\vfil\null\clearpage
+}
+
+\def\dedication{
+   \clearpage\vspace*{\fill}\begin{center}
+}
+\def\enddedication{
+   \end{center}\vspace*{\fill}\newpage
+}
+
+\def\preface{
+   \clearpage\thispagestyle{empty}\chapter*{Preface}
+   \addcontentsline{toc}{chapter}{\protect\numberline{}{Preface}}
+}
+\let\endpreface=\clearpage
+
+\def\acknowledgements{
+   \clearpage
+   \chapter*{Acknowledgements}
+   \addcontentsline{toc}{chapter}{\protect\numberline{}{Acknowledgements}}
+}
+\let\endacknowledgements=\clearpage
+
+

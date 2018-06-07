@@ -1,0 +1,93 @@
+%  Thesis for Xiaolei Chen
+
+\documentclass[12pt]{report}
+\usepackage{thesis}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}		% to see postscript files
+\usepackage{doublespace}
+\usepackage{empheq}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[dvips]{epsfig}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+\usepackage{subcaption}
+\usepackage{mathrsfs}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.eps}
+
+\def\doublespace{1.66}		% 1.66 for double spacing with 12pt
+\def\singlespace{1.00}		% 1.00 for single spacing
+\def\defaultspace{\doublespace}	% adjust spacing factor
+
+%
+% Color
+%
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=true,
+    tabsize=2,
+    frame=\shadowbox
+}
+\lstset{style=mystyle}
+				
+\input{defn}			% include personal macros here
+\input{macros}
+
+\begin{document}
+
+\pagestyle{prelim}		% puts roman numerals at bottom
+\include{prelim}		% preliminary text
+
+\begin{spacing}{\defaultspace}	% adjust spacing
+
+\pagestyle{body}	   % puts Arabic numbers at top
+\input{chap_1_Intr}        % Introduction
+\input{chap_2_Model}       % Mathematical Models
+\input{chap_3_Numerical}   % Numerical Methods
+\input{chap_4_Result} 	   % Numerical Results
+\input{chap_5_Parallel}	   % Parallelization
+\input{chap_6_Concl} 	   % Conclusion
+\end{spacing}
+
+\begin{spacing}{\singlespace}	% Bibliographies must be
+				% in single spacing in an entry and
+				% double spacing between entries
+				% MAKE SURE THE SPACING
+
+\bibliographystyle{ieeetr}
+\bibliography{sample.bib}
+
+
+\end{spacing}
+
+%\begin{spacing}{\defaultspace}  % adjust spacing
+%\input{appendix}
+%\end{spacing}
+
+\end{document}
