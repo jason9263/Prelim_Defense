@@ -33,8 +33,4 @@
 
 
 
-Dynamic Cluster Head Selection in Wireless Sensor Network for Internet of Things Applications
-A bi-level Voronoi diagram-based metaheuristic for a large-scale multi-depot vehicle routing problem
 
-
-Distributed Computation for a Hypercube Network of Sensor-Driven Processors with Communication Delays Including Setup Time
