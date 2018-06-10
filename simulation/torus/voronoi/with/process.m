@@ -1,6 +1,6 @@
 function [res] = process(size,numseed)
 
-pos = initsavemean;
+pos = initsavemean(size/3);
 neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
 for i = 1:size
