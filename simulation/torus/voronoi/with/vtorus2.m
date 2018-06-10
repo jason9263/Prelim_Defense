@@ -62,7 +62,16 @@ end
 %show the seed position
 for k = 1:numseed
     plot(pos(k,1),pos(k,2),'k*');
-    txt = num2str(k);
+    
+    tmpk = k;
+    if mod(tmpk,10) == 0
+        tmpk = 10;
+    else
+        tmpk = mod(tmpk,10);
+    end
+    
+    txt = num2str(tmpk);
+    
     text(pos(k,1)+ 1,pos(k,2),txt);
 end
 %

@@ -1,8 +1,7 @@
 %%
-%draw 20 * 20 point in the plane
-%divide the plane into 5 parts
-%clear
+%draw 50 * 50 point in the plane
 clc
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 %init the grid and seed info
 size = 50;
 %setup the location of seed
@@ -72,13 +71,9 @@ end
 %%
 %show the seed position
 for k = 1:numseed
-    
     plot(pos(k,1),pos(k,2),'k*');
-    
     txt = num2str(k);
-    
     text(pos(k,1)+ 1,pos(k,2),txt);
-    
 end
 %%
 X = [50 100 100 50 50 ]';
@@ -88,4 +83,5 @@ plot(X,Y,'r-');
 xlabel('longitude geographical index');
 ylabel('latitudinal geographical index');
 title('Placement of Processors');
+
 hold off

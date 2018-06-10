@@ -6,9 +6,7 @@ clc
 size = 50*3;
 %setup the location of seed
 numseed = 10*9;
-
 [pos,mcolor] = initvoronoi;
-
 neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
 
@@ -55,6 +53,7 @@ for i = 50:100
     end
 end
 grid on
+%%
 
 %%
 
