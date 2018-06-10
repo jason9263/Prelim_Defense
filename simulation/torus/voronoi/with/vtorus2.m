@@ -13,7 +13,6 @@ neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
 %%
 savetmp = 0;
-
 %%
 %manhattan distance
 figure
@@ -44,17 +43,13 @@ for i = 1:size
             end
         else
             savetmp = savetmp  + 1;
-        end
-        
-        
+        end      
 %         if mod(index,10) == 0
 %             plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
 %         else
 %             plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
 %             
 %         end
-        
-        
     end
 end
 
@@ -88,9 +83,6 @@ ylabel('latitudinal geographical index');
 title('Placement of Processors');
 hold off
 %%
-
-
-%%
 figure
 hold on
 
@@ -114,7 +106,6 @@ end
 (size*size - sumcore)/(size*size)
 legend('1','2','3','4','5','6','7','8','9','10');
 hold off
-
 clc
 
 savetmp

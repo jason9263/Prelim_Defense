@@ -24,7 +24,7 @@ plot(X,Y);
 
 xlabel('\sigma');
 ylabel('Speedup');
-
+title('Speedup vs \sigma');
 end
 
 

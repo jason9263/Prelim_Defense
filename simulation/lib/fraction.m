@@ -20,8 +20,9 @@ end
 X = minr:0.01:maxr;
 Y = times';
 hold on
-plot(X,Y);
 
+plot(X,Y);
+title('Data Fraction vs \sigma');
 xlabel('\sigma');
 ylabel('Injection Processor Data Fraction');
 
