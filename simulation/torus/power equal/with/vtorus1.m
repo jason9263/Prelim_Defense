@@ -1,7 +1,4 @@
 %%
-%draw 20 * 20 point in the plane
-%divide the plane into 5 parts
-%clear
 clc
 %init the grid and seed info
 size = 50;
