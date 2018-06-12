@@ -24,8 +24,10 @@ X = minr:0.01:maxr;
 Y = times';
 hold on
 plot(X,Y);
-xlabel('\sigma');
-ylabel('Speedup');
-title('Speedup vs \sigma');
+
+xlabel('\sigma','fontweight','bold','FontSize',22);
+ylabel('Speedup','FontSize',16);
+title('Speedup vs \sigma','FontSize',16);
+
 end
 

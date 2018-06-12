@@ -98,7 +98,7 @@ hold off
 %%
 figure
 hold on
-
+grid on
 sumcore = 0;
 for i = 1:numseed
     title = [];
@@ -106,14 +106,15 @@ for i = 1:numseed
     %title = [1 neighbor(i,1:min(maxv))];
     sum(title)
     sumcore = sumcore + sum(title);
-    nunitm(title);
-    %nunitm_no(title);
+    %nunitm(title);
+    nunitm_no(title);
 end
+legend('1','2','3','4','5','6','7','8','9','10');
 hold off
 %%
 figure
 hold on
-
+grid on
 sumcore = 0;
 for i = 1:numseed
     title = [];
@@ -121,8 +122,9 @@ for i = 1:numseed
     title = [1 neighbor(i,1:min(maxv))];
     sum(title)
     sumcore = sumcore + sum(title);
-    nunitm(title);
-    %nunitm_no(title);
+    %nunitm(title);
+    nunitm_no(title);
 end
+legend('1','2','3','4','5','6','7','8','9','10');
 hold off
 %%
