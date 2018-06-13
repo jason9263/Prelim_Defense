@@ -1,0 +1,72 @@
+%%
+acc = 1/0.9;
+times= [];
+%min ratio
+%max ratio
+minr = 0.01;
+maxr = 0.99;
+for sigma = minr:0.01:maxr
+    
+    B = [1
+        0
+        0
+        0
+        0
+        0
+        0];
+    
+    A= [1 2 3 4 5 4 3 
+        1 -1 0 0 0 0 0
+        0 sigma-1 1 0 0 0 0
+        0 sigma-1 sigma 1 0 0 0 
+        0 sigma-1 sigma sigma 1 0 0 
+        0 sigma-1 sigma sigma sigma 1 0
+        0 sigma-1 sigma sigma sigma sigma 1];
+    
+    X = A\B;
+    times = [times;1/X(1)];
+end
+times = times * acc;
+
+X = minr:0.01:maxr;
+Y = times';
+hold on
+plot(X,Y);
+
+xlabel('The ratio of zTcm to wTcp');
+ylabel('Speedup');
+
+%%
+times= [];
+%min ratio
+%max ratio
+minr = 0.01;
+maxr = 0.99;
+for sigma = minr:0.01:maxr
+    
+    B = [1
+        0
+        0
+        0
+        0
+        0
+        0];
+    tsigma = (sigma + 1);
+    A= [1 2 3 4 5 4 3
+        1 -tsigma 0 0 0 0 0
+        1 -sigma -tsigma 0 0 0 0
+        1 -sigma -sigma -tsigma 0 0 0
+        1 -sigma -sigma -sigma -tsigma 0 0
+        1 -sigma -sigma -sigma -sigma -tsigma 0
+        1 -sigma -sigma -sigma -sigma -tsigma -tsigma];
+    
+    X = A\B;
+    times = [times;1/X(1)];
+end
+times = times * acc;
+
+X = minr:0.01:maxr;
+Y = times';
+plot(X,Y);
+
+legend('2-2','2-2 no');

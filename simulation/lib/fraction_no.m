@@ -22,7 +22,7 @@ Y = times';
 hold on
 plot(X,Y);
 title('Data Fraction vs \sigma');
-xlabel('\sigma');
+xlabel('\sigma','fontweight','bold','FontSize',22);
 ylabel('Injection Processor Data Fraction');
 
 end
