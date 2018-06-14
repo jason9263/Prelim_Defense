@@ -65,8 +65,8 @@ for size = 50
             
             sumcore = sumcore + sum(neighbor(i, 1:min(maxv)));
             
-            nunitm(title);
-            %nunitm_no(title);
+            %nunitm(title);
+            nunitm_no(title);
             
         end
         
