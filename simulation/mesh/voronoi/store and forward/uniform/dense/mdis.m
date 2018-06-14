@@ -1,6 +1,4 @@
 %%
-%draw 20 * 20 point in the plane
-%divide the plane into 5 parts
 clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
@@ -59,7 +57,7 @@ for i = 1:numseed
     
     title = [1 neighbor(i,1:maxv(i,1))];
     
-    nunitm(title);
+    %nunitm(title);
     
     nunitm_no(title);
     

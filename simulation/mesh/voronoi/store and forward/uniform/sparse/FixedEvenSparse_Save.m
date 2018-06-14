@@ -3,6 +3,7 @@
 %divide the plane into 5 parts
 clear
 clc
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 %init the grid and seed info
 size = 50;
 %setup the location of seed

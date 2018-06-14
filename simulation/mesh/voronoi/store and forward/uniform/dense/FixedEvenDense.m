@@ -8,7 +8,7 @@ tline = [4 8 12 10 6 2];
 nunitm(tline);
 %nunitm_no(tline);
 grid on
-legend('Virtual Cut-through');
+legend('Store and Forward');
 title('Speedup vs \sigma');
 hold off
 
@@ -17,7 +17,7 @@ hold on
 fraction(tline);
 grid on
 title('Data Fraction vs \sigma');
-legend('Virtual Cut-through');
+legend('Store and Forward');
 hold off
 
 %%
@@ -27,7 +27,7 @@ hold on
 tline = [7 14 15 10 6 3 1];
 nunitm(tline);
 grid on
-legend('Virtual Cut-through');
+legend('Store and Forward');
 title('Speedup vs \sigma');
 hold off
 
@@ -36,5 +36,5 @@ hold on
 fraction(tline);
 grid on
 title('Data Fraction vs \sigma');
-legend('Virtual Cut-through');
+legend('Store and Forward');
 hold off
