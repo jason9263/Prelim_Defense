@@ -1,17 +1,13 @@
 %%voronoi torus
-%
 clear
 clc
 %init the grid and seed info
 size = 50*3;
 %setup the location of seed
 numseed = 10*9;
-
 [pos,mcolor] = initvoronoi;
-
 neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
-%%
 savetmp = 0;
 %%
 %manhattan distance
@@ -85,7 +81,7 @@ hold off
 %%
 figure
 hold on
-
+grid on
 sumcore = 0;
 
 for i = 50:60

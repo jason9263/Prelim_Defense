@@ -1,5 +1,4 @@
 %%
-%sensitivity analysis of the regular mesh
 clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
@@ -11,7 +10,7 @@ Y{2} = [1 4];
 Y{3} = [1 4 8];
 Y{4} = [1 4 8 8];
 Y{5} = [1 4 8 8 4];
-%%
+
 minsig = 0.01;
 maxsig = 0.99;
 
@@ -57,12 +56,14 @@ for i = 1: sizex(1)
 end
 
 surf(x,y,z,'FaceAlpha',0.7);
-xlabel('\sigma');
-ylabel('Number of cores');
-zlabel('Speedup');
-title('Speedup vs \sigma, Number of cores');
+grid on
+
+xlabel('\sigma','fontweight','bold','FontSize',35);
+ylabel('Number of cores','fontweight','bold','FontSize',35);
+zlabel('Speedup','fontweight','bold','FontSize',35);
+title('Speedup vs \sigma, Number of cores','fontweight','bold','FontSize',35);
+
 colorbar
-%%
 
 %%
 figure
