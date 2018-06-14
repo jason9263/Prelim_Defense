@@ -45,8 +45,8 @@ for i = 1: sizex(1)
             tmpline = [tmpline (tmpy-X(tmp-1))];
         end
         
-        B = sigmaB(tmpline);
-        A = sigmaA(x(i,j),tmpline);
+        B = sigmaB_no(tmpline);
+        A = sigmaA_no(x(i,j),tmpline);
         
         times = A\B;
         
