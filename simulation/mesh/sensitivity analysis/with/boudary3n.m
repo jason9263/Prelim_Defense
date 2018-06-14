@@ -1,4 +1,4 @@
-
+%%
 clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
@@ -15,7 +15,7 @@ Y{7} = [1 3 3 3 3 3 2];
 Y{8} = [1 3 3 3 3 3 3 2];
 Y{9} = [1 3 3 3 3 3 3 3 2];
 
-%%
+
 minsig = 0.01;
 maxsig = 0.99;
 
@@ -70,11 +70,11 @@ end
 colormap default
 surf(x,y,z,'FaceAlpha',0.7);
 
-
-xlabel('\sigma');
-ylabel('Number of cores');
-zlabel('Speedup');
-title('Speedup vs \sigma and Number of cores');
+grid on
+xlabel('\sigma','fontweight','bold','FontSize',35);
+ylabel('Number of cores','fontweight','bold','FontSize',35);
+zlabel('Speedup','fontweight','bold','FontSize',35);
+title('Speedup vs \sigma, Number of cores','fontweight','bold','FontSize',35);
 colorbar
 %%
 figure
