@@ -1,6 +1,4 @@
 %%
-%
-
 clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
@@ -132,11 +130,11 @@ end
 
 %corner z - inner z
 sz = sz -z;
-
 surf(x,y,sz,'FaceAlpha',0.7);
-xlabel('\sigma');
-ylabel('Number of cores');
-zlabel('Speedup');
-title('Speedup vs \sigma and Number of cores');
+
+xlabel('\sigma','fontweight','bold','FontSize',35);
+ylabel('Number of cores','fontweight','bold','FontSize',35);
+zlabel('Speedup','fontweight','bold','FontSize',35);
+title('Speedup vs \sigma, Number of cores','fontweight','bold','FontSize',35);
 
 colorbar
