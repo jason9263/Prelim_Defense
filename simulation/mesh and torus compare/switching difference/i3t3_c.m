@@ -26,8 +26,6 @@ plot(sigma,solution(:,1),'r');
 plot(sigma,solution(:,2),'g');
 plot(sigma,solution(:,3),'b');
 
-
-
 B = [1
     0
     0];
@@ -50,13 +48,13 @@ for sigma = 0.01:0.01:0.99
 end
 
 sigma = [0.01:0.01:0.99];
-
+grid on
 
 plot(sigma,solution(:,1),'--r');
 plot(sigma,solution(:,2),'--g');
 plot(sigma,solution(:,3),'--b');
 
-ylabel('Data fraction');
-xlabel('\sigma');
-title('Data Fraction on Different Nodes Front End VS Without Front End');
+ylabel('Data fraction','fontweight','bold','FontSize',18);
+xlabel('\sigma','fontweight','bold','FontSize',25);
+title('Virtual cut-through vs Store and forward');
 legend('F \alpha_0','F \alpha_1','F \alpha_5','NF \alpha_0','NF \alpha_1','NF \alpha_5');
