@@ -2,9 +2,9 @@
 clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
+
 X = [];
 X = [1;5;13;21;25];
-
 Y = cell(1,5);
 
 Y{1} = [1];
