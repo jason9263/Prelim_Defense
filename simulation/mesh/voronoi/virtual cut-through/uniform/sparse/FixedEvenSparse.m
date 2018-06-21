@@ -93,15 +93,15 @@ for i = 1:numseed
     
     title = [];
     
-    title = [1 neighbor(i,1:maxv(i,1))];
+    %title = [1 neighbor(i,1:maxv(i,1))];
     
-    %title = [1 neighbor(i,1:min(maxv))];
+    title = [1 neighbor(i,1:min(maxv))];
     sum(title)
     
     sumcore = sumcore + sum(title);
     
-    %nunitm(title);
-    nunitm_no(title);
+    nunitm(title);
+    %nunitm_no(title);
     
 end
 (size*size - sumcore)/(size*size)

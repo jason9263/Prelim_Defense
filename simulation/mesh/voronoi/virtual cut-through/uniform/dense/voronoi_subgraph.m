@@ -30,6 +30,6 @@ Y = times';
 hold on
 grid on
 plot(X,Y);
-xlabel('\sigma');
-ylabel('Speedup');
+xlabel('\sigma','fontweight','bold','FontSize',25);
+ylabel('Speedup','fontweight','bold','FontSize',25);
 title('Speedup vs \sigma');

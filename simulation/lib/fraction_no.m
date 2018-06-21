@@ -21,8 +21,9 @@ X = minr:0.01:maxr;
 Y = times';
 hold on
 plot(X,Y);
-title('Data Fraction vs \sigma');
-xlabel('\sigma','fontweight','bold','FontSize',22);
-ylabel('Injection Processor Data Fraction');
+grid on
+title('Data Fraction vs \sigma','FontSize',16);
+xlabel('\sigma','fontweight','bold','FontSize',25);
+ylabel('Injection Processor Data Fraction','FontSize',20);
 
 end
