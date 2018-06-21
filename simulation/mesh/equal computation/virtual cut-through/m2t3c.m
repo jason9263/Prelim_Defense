@@ -1,5 +1,5 @@
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
-tline = [1 4 4];
+tline = [1 2 2 1];
 
 times= [];
 %min ratio
