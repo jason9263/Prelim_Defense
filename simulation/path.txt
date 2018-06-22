@@ -10,3 +10,10 @@ title('Speedup vs \sigma, Number of cores','fontweight','bold','FontSize',35);
 
 xlabel('\sigma','fontweight','bold','FontSize',25);
 ylabel('Speedup','fontweight','bold','FontSize',25);
+
+
+set(gca,'linewidth',1,'fontsize',25,'fontname','Times');
+
+
+
+
