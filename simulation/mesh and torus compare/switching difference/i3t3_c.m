@@ -57,4 +57,4 @@ plot(sigma,solution(:,3),'--b');
 ylabel('Data fraction','fontweight','bold','FontSize',18);
 xlabel('\sigma','fontweight','bold','FontSize',25);
 title('Virtual cut-through vs Store and forward');
-legend('F \alpha_0','F \alpha_1','F \alpha_5','NF \alpha_0','NF \alpha_1','NF \alpha_5');
+legend('VCT \alpha_0','VCT \alpha_1','VCT \alpha_5','SF \alpha_0','SF \alpha_1','SF \alpha_5');

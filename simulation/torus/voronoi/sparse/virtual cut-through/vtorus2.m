@@ -30,22 +30,22 @@ for i = 1:size
             maxv(index) = max(maxv(index),minv);
         end
         
-        if minv <= 15
-            if mod(index,10) == 0
-                plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-            else
-                plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
-                
-            end
+        %         if minv <= 15
+        %             if mod(index,10) == 0
+        %                 plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+        %             else
+        %                 plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        %
+        %             end
+        %         else
+        %             savetmp = savetmp  + 1;
+        %         end
+        if mod(index,10) == 0
+            plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
         else
-            savetmp = savetmp  + 1;
-        end      
-%         if mod(index,10) == 0
-%             plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-%         else
-%             plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
-%             
-%         end
+            plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+            
+        end
     end
 end
 
