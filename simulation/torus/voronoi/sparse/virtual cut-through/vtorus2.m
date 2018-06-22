@@ -88,9 +88,9 @@ for i = 50:60
     
     title = [];
     
-    %title = [1 neighbor(i,1:maxv(i,1))];
+    title = [1 neighbor(i,1:maxv(i,1))];
     
-    title = [1 neighbor(i,1:min(maxv))];
+    %title = [1 neighbor(i,1:min(maxv))];
     sum(title)
     
     sumcore = sumcore + sum(title);

@@ -129,9 +129,10 @@ for i = 1: sizex(1)
 end
 
 %corner z - inner z
-sz = sz -z;
+sz = z - sz;
 surf(x,y,sz,'FaceAlpha',0.7);
-
+grid on
+set(gca,'linewidth',1,'fontsize',25,'fontname','Times');
 xlabel('\sigma','fontweight','bold','FontSize',35);
 ylabel('Number of cores','fontweight','bold','FontSize',35);
 zlabel('Speedup','fontweight','bold','FontSize',35);

@@ -47,22 +47,22 @@ for i = 50:100
         z=r*sin(v);
         
         
-        if minv <= 15
-            if mod(index,10) == 0
-                plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-            else
-                plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
-            end
-            
-        end
-        
-        
-        
-        %         if mod(index,10) == 0
-        %             plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-        %         else
-        %             plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        %         if minv <= 15
+        %             if mod(index,10) == 0
+        %                 plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+        %             else
+        %                 plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        %             end
+        %
         %         end
+        
+        
+        
+        if mod(index,10) == 0
+            plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+        else
+            plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        end
         
         
         
@@ -96,7 +96,7 @@ y=(R+r.*cos(v)).*sin(u);
 z=r.*sin(v);
 mesh(x,y,z);
 view([-52,64]);
-
+set(gca,'linewidth',1,'fontsize',25,'fontname','Times');
 xlabel('longitude geographical index','fontweight','bold','FontSize',25);
 ylabel('latitudinal geographical index','fontweight','bold','FontSize',25);
 title('Placement of Processors','fontweight','bold','FontSize',25);
