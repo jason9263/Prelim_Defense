@@ -3,15 +3,16 @@
 %divide the plane into 5 parts
 clear
 clc
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 %init the grid and seed info
 size = 50;
 %setup the location of seed
 numseed = 10;
 mcolor = rand(numseed,3);
-
 pos = randi([1,size],numseed,2);
 
-pos = [    22    43
+pos = [
+    22    43
     46    32
     10    18
     14    26
@@ -23,7 +24,8 @@ pos = [    22    43
     8    12
     ];
 
-mcolor = [    
+
+mcolor = [
     0.1    0.4505    0.2
     0.7943    0.0838    0.9619
     0.3112    0.2290    0.0046
@@ -34,6 +36,7 @@ mcolor = [
     0.6541    0.9961    0.3998
     0.6892    0.0782    0.2599
     0.7482    0.4427    0.8001];
+
 
 
 neighbor = zeros(numseed,2*size);
