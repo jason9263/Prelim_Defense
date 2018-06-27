@@ -1,6 +1,4 @@
 %%
-%draw 20 * 20 point in the plane
-%divide the plane into 5 parts
 clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
@@ -9,7 +7,6 @@ size = 50;
 %setup the location of seed
 numseed = 10;
 mcolor = rand(numseed,3);
-
 pos = randi([1,size],numseed,2);
 
 pos = [    22    43
@@ -37,7 +34,6 @@ mcolor = [    0.1622    0.4505    0.1067
 
 neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
-
 %%
 %manhattan distance
 figure
@@ -105,6 +101,7 @@ for i = 1:numseed
     %nunitm_no(title);
     
 end
+
 (size*size - sumcore)/(size*size)
 legend('1','2','3','4','5','6','7','8','9','10');
 hold off

@@ -1,10 +1,9 @@
 %%
-%draw 20 * 20 point in the plane
-%divide the plane into 5 parts
 clear
 clc
 %init the grid and seed info
 size = 50;
+
 %setup the location of seed
 numseed = 10;
 mcolor = rand(numseed,3);
@@ -64,9 +63,7 @@ for i = 1:size
         if minv <= 12
             plot(i,j,'o','MarkerEdgeColor',[mcolor(index,:)],'MarkerFaceColor',[mcolor(index,:)]);
         end
-        
-        
-        
+
     end
 end
 %%

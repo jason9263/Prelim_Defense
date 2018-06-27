@@ -1,12 +1,10 @@
 %%
 %draw 20 * 20 point in the plane
-%divide the plane into 5 parts
 clear
 clc
-%init the grid and seed info
 
 avg = 0;
-totaltime = 100;
+totaltime = 1;
 totalnum = 0;
 
 for size = 50
@@ -28,8 +26,7 @@ for size = 50
         neighbor = zeros(numseed,2*size);
         maxv = zeros(numseed,1);
         
-        %%
-        %manhattan distance
+        
         
         for i = 1:size
             for j = 1:size
@@ -53,29 +50,91 @@ for size = 50
         end
         
         
+        [v,itmp] = min(maxv);
+        neitmp = sum(neighbor(itmp,:));
+        S = [];
+        
+        for i = 1:10
+            sumtmp = 0;
+            
+            
+            for j = 1:2*size
+                sumtmp = sumtmp + neighbor(i,j);
+                if sumtmp >= neitmp
+                    S = [S;j];
+                    break
+                end
+            end
+            
+        end
+        figure
+        hold on
+        
+        savepro = 0;
+        for i = 1:size
+            for j = 1:size
+                dis = [];
+                
+                for k = 1:numseed
+                    tmp = abs(i - pos(k,1)) + abs(j - pos(k,2));
+                    dis = [dis, tmp];
+                end
+                
+                [minv,index] = min(dis);
+                
+                if minv > 0
+                    
+                    neighbor(index,minv) = neighbor(index,minv) + 1;
+                    
+                    maxv(index) = max(maxv(index),minv);
+                    
+                end
+                
+                stmp = S(index);
+                if minv <= stmp
+                    savepro = savepro +1;
+                    plot(i,j,'o','MarkerEdgeColor',[mcolor(index,:)],'MarkerFaceColor',[mcolor(index,:)]);
+                end
+                
+            end
+        end
+        %show the seed position
+        for k = 1:numseed
+            
+            plot(pos(k,1),pos(k,2),'k*');
+            
+            txt = num2str(k);
+            
+            text(pos(k,1)+ 1,pos(k,2),txt);
+            
+        end
+        grid on
+        xlabel('longitude geographical coordinate');
+        ylabel('latitude geographical coordinate');
+        hold off
+        
+        figure
+        hold on
+        grid on
+        
         sumcore = 0;
-        totalnum = totalnum + min(maxv);
         
         for i = 1:numseed
             
             title = [];
             
             %title = [1 neighbor(i,1:maxv(i,1))];
-            title = [1 neighbor(i,1:min(maxv))];
-            
-            sumcore = sumcore + sum(neighbor(i, 1:min(maxv)));
-            
-            nunitm(title);
+            title = [1 neighbor(i,1: S(i))];
+            nunitm_c(title,mcolor(i,:));
             %nunitm_no(title);
             
         end
+        legend('1','2','3','4','5','6','7','8','9','10');
+        hold off
         
-        avg = avg + (size*size - sumcore)/(size*size);
+        savepro/(size*size)
+        
     end
-    
-    avg/totaltime
-    
-    totalnum/totaltime
     
     
 end

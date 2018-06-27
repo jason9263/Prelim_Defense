@@ -23,16 +23,18 @@ pos = [    22    43
     8    12
     ];
 
-mcolor = [    0.1622    0.4505    0.1067
+mcolor = [    
+    0.1    0.4505    0.2
     0.7943    0.0838    0.9619
     0.3112    0.2290    0.0046
     0.5285    0.9133    0.7749
     0.1656    0.1524    0.8173
     0.6020    0.8258    0.8687
-    0.2630    0.5383    0.0844
+    0.2630    0.1383    0.6844
     0.6541    0.9961    0.3998
     0.6892    0.0782    0.2599
     0.7482    0.4427    0.8001];
+
 
 neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
@@ -92,19 +94,12 @@ sumcore = 0;
 for i = 1:numseed
     
     title = [];
-    
     %title = [1 neighbor(i,1:maxv(i,1))];
-    
     title = [1 neighbor(i,1:min(maxv))];
-    sum(title)
-    
-    sumcore = sumcore + sum(title);
-    
-    nunitm(title);
+    nunitm_c(title,mcolor(i,:));
     %nunitm_no(title);
-    
 end
-(size*size - sumcore)/(size*size)
+
 legend('1','2','3','4','5','6','7','8','9','10');
 hold off
 
