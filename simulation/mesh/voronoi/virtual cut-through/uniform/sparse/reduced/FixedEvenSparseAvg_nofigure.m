@@ -116,6 +116,7 @@ for size = 60:5:60
     end
     
     avg = avg/totaltime
+    
 end
 
 %%
@@ -135,6 +136,4 @@ title('RVDA Saved Percentage');
 ylim([0,0.5]);
 
 hold off
-
-%plot(X,Z);
 %%

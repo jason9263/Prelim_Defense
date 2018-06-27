@@ -1,34 +1,26 @@
-\begin{empheq}[left=\empheqlbrace]
-{align}
-\alpha_{0} \omega T_{cp} = T_{f,m}\\
-\alpha_{0} \omega T_{cp} = T_{f,m}\\
-\alpha_{1} \omega T_{cp} = T_{f,m}\\
-\alpha_{2} \omega T_{cp} = T_{f,m}\\
-\alpha_{1}zT_{cm} + \alpha_{3}\omega T_{cp} = T_{f,m}\\
-\alpha_{0} + \alpha_{1} + \alpha_{2} + \alpha_{3} = 1\\
-\sigma = \frac{zT_{cm}}{\omega T_{cp}}\\
-0 < \sigma < 1 \\
-0 < \alpha_{0}, \alpha_{1}, \alpha_{2}, \alpha_{3}  < 1\\
-\end{empheq}
-\\
+pos = [16    30
+    46    33
+    28    30
+    9    36
+    45    11
+    30     6
+    25    43
+    6    16
+    40   40
+    20    15];
 
-
-\begin{empheq}[left=\empheqlbrace]
-{align}
-
-
-\end{empheq}
-\\
-
-
-\renewcommand{\qedsymbol}{$\blacksquare$}
-\begin{proof}[$\det A \neq 0$]
-  \begin{equation*}
-
-
-     \qedhere
-  \end{equation*}
-\end{proof}
+mcolor = [
+    0.5181    0.2548    0.9160
+    0.9436    0.2240    0.0012
+    0.6377    0.6678    0.4624
+    0.9577    0.8444    0.4243
+    0.2407    0.3445    0.4609
+    0.6761    0.7805    0.7702
+    0.2891    0.6753    0.3225
+    0.6718    0.0067    0.7847
+    0.6951    0.6022    0.4714
+    0.0680    0.3868    0.0358
+    ];
 
 
 

@@ -7,10 +7,9 @@ avg = 0;
 totaltime = 1;
 totalnum = 0;
 
-for size = 50
+for size = 50:50
     for time = 1:totaltime
-        size = 0;
-        numseed = 0;
+
         mcolor = [];
         pos = [];
         neighbor = [];
@@ -25,9 +24,7 @@ for size = 50
         
         neighbor = zeros(numseed,2*size);
         maxv = zeros(numseed,1);
-        
-        
-        
+
         for i = 1:size
             for j = 1:size
                 dis = [];
@@ -61,7 +58,8 @@ for size = 50
                 if sumtmp >= neitmp
                     S = [S;j];
                     break;
-                else if neighbor(i,j) == 0
+                else
+                    if neighbor(i,j) == 0
                         S = [S;j];
                         break;
                     end
@@ -121,29 +119,24 @@ for size = 50
         sumcore = 0;
         
         for i = 1:numseed
-            
             title = [];
-            
             %title = [1 neighbor(i,1:maxv(i,1))];
             title = [1 neighbor(i,1: S(i))];
             nunitm_c(title,mcolor(i,:));
             %nunitm_no(title);
-            
         end
+        
         legend('1','2','3','4','5','6','7','8','9','10');
         hold off
         
         savepro/(size*size)
         
     end
-    
-    
 end
 
 %%
 X = [35 40 45 50 55 60];
-Y = [0.3780 0.3726 0.3890 0.3504  0.3464 0.3835 ];
-Z = [7.8400 9.2200 10.0800 11.9900 13.1900 14.0400];
+Y = [ 0.4057 0.4099  0.4431 0.4124 0.3887 0.4043];
 
 figure
 hold on
@@ -153,15 +146,6 @@ xlabel('Longitude number of cores');
 ylabel('Saved Percentage');
 title('RVDA Saved Percentage');
 ylim([0,0.5]);
-hold off
-
-%%
-figure
-hold on
-plot(X,Z);
-xlabel('number of core on each edge');
-ylabel('avg length of the mindepth');
-ylim([5,15]);
 hold off
 
 %plot(X,Z);

@@ -1,6 +1,5 @@
 %%
 %draw 20 * 20 point in the plane
-%divide the plane into 5 parts
 clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
@@ -16,7 +15,7 @@ pos = [16    30
     28    30
     9    36
     45    11
-    49     6
+    30     6
     25    43
     6    16
     40   40
@@ -62,17 +61,33 @@ for i = 1:size
     end
 end
 % 0.3028
-%%
-neitmp = sum(neighbor(10,:))
+[v,itmp] = min(maxv);
+neitmp = size*size;
+
+for i = 1:numseed
+    if maxv(i) == v
+        tmpneitmp = sum(neighbor(i,:));
+        if tmpneitmp < neitmp
+            neitmp = tmpneitmp;
+        end
+    end
+end
+
+
 S = [];
 for i = 1:10
     sumtmp = 0;
-
+    
     for j = 1:2*size
         sumtmp = sumtmp + neighbor(i,j);
         if sumtmp >= neitmp
             S = [S;j];
-            break
+            break;
+        else
+            if neighbor(i,j) == 0
+                S = [S;j];
+                break;
+            end
         end
     end
     
@@ -92,14 +107,6 @@ for i = 1:size
         end
         
         [minv,index] = min(dis);
-        
-        if minv > 0
-            
-            neighbor(index,minv) = neighbor(index,minv) + 1;
-            
-            maxv(index) = max(maxv(index),minv);
-            
-        end
         
         stmp = S(index);
         if minv <= stmp
@@ -147,26 +154,7 @@ end
 
 legend('1','2','3','4','5','6','7','8','9','10');
 hold off
-
 savepro/(size*size)
-%%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

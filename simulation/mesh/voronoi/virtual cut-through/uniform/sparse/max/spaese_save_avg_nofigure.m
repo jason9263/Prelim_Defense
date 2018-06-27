@@ -66,7 +66,8 @@ for size = 60:5:60
                 if sumtmp >= neitmp
                     S = [S;j];
                     break;
-                else if neighbor(i,j) == 0
+                else
+                    if neighbor(i,j) == 0
                         S = [S;j];
                         break;
                     end
