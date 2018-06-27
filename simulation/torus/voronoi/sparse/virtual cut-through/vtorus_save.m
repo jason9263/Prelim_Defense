@@ -15,8 +15,6 @@ maxv = zeros(numseed,1);
 R = 5;
 r = 1;
 
-
-
 for i = 51:100
     for j = 51:100
         dis = [];
