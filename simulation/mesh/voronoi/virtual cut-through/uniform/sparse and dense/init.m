@@ -15,9 +15,9 @@ mcolor = [
 %%
 pos = cell(1,10);
 
-pos1 = zeros(16,2);
+pos1 = zeros(9,2);
 
-for i = 1:16
+for i = 1:9
     pos1(i,1) = 12;
     pos1(i,2) = 25 + i -1;
 end

@@ -53,9 +53,7 @@ for i = 50:100
     end
 end
 grid on
-%%
 
-%%
 
 
 

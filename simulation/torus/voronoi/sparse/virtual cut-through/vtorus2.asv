@@ -65,7 +65,8 @@ for i = 1:numseed
         end
     end
 end
-
+%%
+%manhattan distance
 figure
 hold on
 for i = 51:100
@@ -79,22 +80,22 @@ for i = 51:100
         
         [minv,index] = min(dis);
         
+         if mod(index,10) == 0
+             tmpindex = 10;
+         else
+             
+        
+        
+        if minv <= S(index)
+        end
+        
         if mod(index,10) == 0
-            tmpindex = 10;
+            plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
         else
-            tmpindex = mod(index,10);
+            plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
         end
         
-        index = tmpindex;
         
-        if minv <= S(tmpindex)
-            if mod(index,10) == 0
-                plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-            else
-                plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
-            end
-        end
-
     end
 end
 %%

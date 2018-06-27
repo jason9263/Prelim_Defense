@@ -11,6 +11,8 @@ numseed = 10;
 neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
 spr = 0;
+figure
+hold on
 
 for i = 1:50
     for j = 1:50
@@ -32,20 +34,31 @@ for i = 1:50
             
         end
         
-        %         if minv <= 13
-        %
-        %
-        %             plot(i,j,'o','MarkerEdgeColor',[mcolor(index,:)],'MarkerFaceColor',[mcolor(index,:)]);
-        %
-        %         else
-        %             spr = spr + 1;
-        %         end
+        plot(i,j,'o','MarkerEdgeColor',[mcolor(index,:)],'MarkerFaceColor',[mcolor(index,:)]);
         
     end
 end
 
-S = [];
 
+
+for k = 1:10
+    tmp = pos{k};
+    hold on
+    plot(tmp(:,1), tmp(:,2),'k*');
+end
+
+xlim([0 50]);
+ylim([0 50]);
+grid on
+
+xlabel('latitude index');
+ylabel('longitude index');
+
+hold off
+%%
+figure
+S = [];
+hold on
 [v,itmp] = min(maxv);
 neitmp = size*size;
 
@@ -73,7 +86,6 @@ for i = 1:numseed
     end
 end
 
-%%
 for i = 1:50
     for j = 1:50
         
@@ -86,7 +98,7 @@ for i = 1:50
             sd = [sd; tmpsd];
             
         end
-        hold on
+        
         [minv,index] = min(sd);
         
         if minv > 0
@@ -136,5 +148,24 @@ for i = 1:numseed
     nunitm_c(title,mcolor(i,:));
     %nunitm_no(title);
 end
+legend('1','2','3','4','5','6','7','8','9','10');
 hold off
 %%
+
+figure
+hold on
+grid on
+
+
+sumcore = 0;
+for i = 1:numseed
+    title = [];
+    %title = [1 neighbor(i,1:S(i))];
+    title = [1 neighbor(i,1:maxv(i,:))];
+    %sum(title)
+    %sumcore = sumcore + sum(title);
+    nunitm_c(title,mcolor(i,:));
+    %nunitm_no(title);
+end
+legend('1','2','3','4','5','6','7','8','9','10');
+hold off
