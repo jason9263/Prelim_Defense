@@ -54,18 +54,19 @@ for size = 50
         neitmp = sum(neighbor(itmp,:));
         S = [];
         
-        for i = 1:10
+        for i = 1:numseed
             sumtmp = 0;
-            
-            
             for j = 1:2*size
                 sumtmp = sumtmp + neighbor(i,j);
                 if sumtmp >= neitmp
                     S = [S;j];
-                    break
+                    break;
+                else if neighbor(i,j) == 0
+                        S = [S;j];
+                        break;
+                    end
                 end
             end
-            
         end
         figure
         hold on

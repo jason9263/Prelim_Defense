@@ -5,10 +5,10 @@ clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 
 avg = 0;
-totaltime = 10;
+totaltime = 100;
 totalnum = 0;
 
-for size = 50
+for size = 60:5:60
     for time = 1:totaltime
         
         numseed = 0;
@@ -18,37 +18,13 @@ for size = 50
         maxv = [];
         
         S = [];
-        size = 35;
+        
         %setup the location of seed
         numseed = 10;
         mcolor = rand(numseed,3);
         pos = randi([1,size],numseed,2);
         neighbor = zeros(numseed,2*size);
         maxv = zeros(numseed,1);
-        
-        
-        pos = [   19     9
-            34     8
-            23    24
-            34    30
-            9    13
-            24    28
-            11    24
-            24     1
-            25    22
-            3    14];
-        
-        mcolor = [
-            0.4229    0.5309    0.7788
-            0.0942    0.6544    0.4235
-            0.5985    0.4076    0.0908
-            0.4709    0.8200    0.2665
-            0.6959    0.7184    0.1537
-            0.6999    0.9686    0.2810
-            0.6385    0.5313    0.4401
-            0.0336    0.3251    0.5271
-            0.0688    0.1056    0.4574
-            0.3196    0.6110    0.8754];
         
         for i = 1:size
             for j = 1:size
@@ -83,18 +59,21 @@ for size = 50
             end
         end
         
-        neitmp
-        
         for i = 1:numseed
             sumtmp = 0;
             for j = 1:2*size
                 sumtmp = sumtmp + neighbor(i,j);
                 if sumtmp >= neitmp
                     S = [S;j];
-                    break
+                    break;
+                else if neighbor(i,j) == 0
+                        S = [S;j];
+                        break;
+                    end
                 end
             end
         end
+        
         
         savepro = 0;
         
@@ -140,17 +119,21 @@ for size = 50
 end
 
 %%
-X = [35 40 45 50 55 60];
-Y = [ ];
-
+clear title xlabel ylabel
 figure
 hold on
-grid on
+
+X = [35 40 45 50 55 60];
+Y = [ 0.4057 0.4099  0.4431 0.4124 0.3887 0.4043];
+
 plot(X,Y);
+grid on
+
 xlabel('Longitude number of cores');
 ylabel('Saved Percentage');
 title('RVDA Saved Percentage');
 ylim([0,0.5]);
+
 hold off
 
 %plot(X,Z);
