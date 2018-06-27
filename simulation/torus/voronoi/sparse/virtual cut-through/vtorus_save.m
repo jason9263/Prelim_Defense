@@ -115,14 +115,25 @@ for i = 51:100
             index = mod(index,10);
         end
         
+        %         if minv <= S(index)
+        %             if mod(index,10) == 0
+        %                 plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+        %             else
+        %                 plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        %             end
+        %
+        %         end
+        
+        
         if minv <= S(index)
-            if mod(index,10) == 0
-                plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-            else
-                plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
-            end
-            
         end
+        if mod(index,10) == 0
+            plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+        else
+            plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        end
+        
+        
         
     end
 end

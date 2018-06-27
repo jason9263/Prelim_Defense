@@ -2,15 +2,15 @@
 function [pos, mcolor] = initvoronoi
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 propos = [16    30
-    46    13
-    22    30
+    46    33
+    28    30
     9    36
     45    11
     49     6
-    22    15
+    25    43
     6    16
-    13    21
-    20    25];
+    40   40
+    20    15];
 
 propos(:,1) = propos(:,1) + 50;
 propos(:,2) = propos(:,2) + 50;
@@ -22,7 +22,7 @@ for i = -1:1
         tmp = [];
         tmp = propos;
         
-        tmp(:,1) = tmp(:,1) + i*50;  
+        tmp(:,1) = tmp(:,1) + i*50;
         tmp(:,2) = tmp(:,2) + j*50;
         
         pos = [pos;tmp];

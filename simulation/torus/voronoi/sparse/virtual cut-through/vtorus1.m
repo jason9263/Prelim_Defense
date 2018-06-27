@@ -1,5 +1,6 @@
 %%
 %draw 50 * 50 point in the plane
+clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 %init the grid and seed info
@@ -11,18 +12,15 @@ mcolor = rand(numseed,3);
 pos = randi([1,size],numseed,2);
 
 pos = [16    30
-    46    13
-    22    30
+    46    33
+    28    30
     9    36
     45    11
     49     6
-    22    15
+    25    43
     6    16
-    13    21
-    20    25];
-
-pos(:,1)= pos(:,1)+50;
-pos(:,2) = pos(:,2) + 50;
+    40   40
+    20    15];
 
 mcolor = [
     0.5181    0.2548    0.9160
@@ -39,14 +37,13 @@ mcolor = [
 
 neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
-
 %%
 %manhattan distance
 figure
 hold on
 
-for i = 50+0:50+size
-    for j = 50+0:50+size
+for i = 1:size
+    for j = 1:size
         dis = [];
         
         for k = 1:numseed
@@ -57,11 +54,8 @@ for i = 50+0:50+size
         [minv,index] = min(dis);
         
         if minv > 0
-            
             neighbor(index,minv) = neighbor(index,minv) + 1;
-            
             maxv(index) = max(maxv(index),minv);
-            
         end
         
         plot(i,j,'o','MarkerEdgeColor',[mcolor(index,:)],'MarkerFaceColor',[mcolor(index,:)]);
@@ -71,17 +65,32 @@ end
 %%
 %show the seed position
 for k = 1:numseed
+    
     plot(pos(k,1),pos(k,2),'k*');
+    
     txt = num2str(k);
+    
     text(pos(k,1)+ 1,pos(k,2),txt);
 end
-%%
-X = [50 100 100 50 50 ]';
-Y = [50 50 100 100 50 ]';
 
-plot(X,Y,'r-');
 xlabel('longitude geographical index');
 ylabel('latitudinal geographical index');
 title('Placement of Processors');
 
 hold off
+%%
+figure
+hold on
+grid on
+sumcore = 0;
+
+for i = 1:10
+    title = [];
+    title = [1 neighbor(i,1:maxv(i))];
+    %title = [1 neighbor(i,1:min(maxv))];
+    nunitm_c(title, mcolor(i,:));
+    %nunitm_no(title);
+end
+legend('1','2','3','4','5','6','7','8','9','10');
+hold off
+clc

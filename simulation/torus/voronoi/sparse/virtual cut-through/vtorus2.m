@@ -66,6 +66,7 @@ for i = 1:numseed
     end
 end
 
+numseed = 9 * 10;
 figure
 hold on
 for i = 51:100
@@ -87,7 +88,7 @@ for i = 51:100
         
         index = tmpindex;
         
-        if minv <= S(tmpindex)
+        if minv <= S(index)
             if mod(index,10) == 0
                 plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
             else
@@ -136,7 +137,7 @@ sumcore = 0;
 
 for i = 1:10
     title = [];
-    title = [1 neighbor(i,1:maxv(i,1))];
+    title = [1 neighbor(i,1:S(i))];
     %title = [1 neighbor(i,1:min(maxv))];
     nunitm_c(title, mcolor(i,:));
     %nunitm_no(title);
