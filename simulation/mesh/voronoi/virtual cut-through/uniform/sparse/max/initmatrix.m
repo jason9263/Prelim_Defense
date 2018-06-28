@@ -1,18 +1,17 @@
-function [posmatrix] = initmatrix(m,n,pos,S)
+function [posmatrix,sumtmp] = initmatrix(m,n,pos,S)
 
 posmatrix = zeros(m,n);
-
 sizepos = size(pos);
-
+sumtmp = [];
 
 for i = 1: sizepos(1)
-    
     x = pos(i,1);
     y = pos(i,2);
     tmp = 0;
-    for dis = 1:S(i)
+    
+    for dis = 0:S(i)
         
-        [dpos]= dispos(x,y,dis,m,n);
+        [dpos]= dispos(x,y,dis,m,n,pos);
         
         sizedpos = size(dpos);
         
@@ -26,7 +25,7 @@ for i = 1: sizepos(1)
             end
         end
     end
-    tmp
+    sumtmp = [sumtmp tmp];
 end
 
 end

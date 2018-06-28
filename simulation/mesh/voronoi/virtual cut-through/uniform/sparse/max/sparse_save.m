@@ -141,12 +141,14 @@ grid on
 
 sumcore = 0;
 
+sumtitle = [];
 for i = 1:numseed
     
     title = [];
     %title = [1 neighbor(i,1:maxv(i,1))];
     %title = [1 neighbor(i,1:min(maxv))];
     title = [1 neighbor(i,1: S(i))];
+    sumtitle = [sumtitle sum(title)];
     nunitm_c(title,mcolor(i,:));
     %nunitm_no_c(title,mcolor(i,:));
     
@@ -154,12 +156,11 @@ end
 
 legend('1','2','3','4','5','6','7','8','9','10');
 hold off
-savepro/(size*size)
+
+%savepro/(size*size)
 
 
-for i = 1:10
-    sum(neighbor(i, 1:S(i)))
-end
+
 
 
 
