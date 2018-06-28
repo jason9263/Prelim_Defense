@@ -1,17 +1,22 @@
 for i = 1:10
-    tmps = S(i);
+    tmpindex = S(i);
     
-    for j = tmps+1: 2*50
+    for j = tmpindex+1: 2*50
         neighbor(i,j) = 0;
     end
     
 end
 
-
 S_ext = S;
 update = zeros(10,1);
 
 while 1 > 0
+    sumS = [];
+    
+    for i = 1:10
+        tmpsumS = sum(neighbor(i,1:S_ext(i)));
+        sumS = [sumS;tmpsumS];
+    end
     
     [v,index] = min(sumS);
     
@@ -19,7 +24,11 @@ while 1 > 0
     y = pos(index,2);
     dis = S(index) + 1;
     
-    upos = dispos_ext(x,y,dis,50,50,posmatrix);
+    if index == 2
+        index;
+    end
+
+    upos = dispos_ext(x,y,dis,50,50,posmatrix,pos,index);
     sizeupos = size(upos);
     
     if sizeupos(1) == 0
