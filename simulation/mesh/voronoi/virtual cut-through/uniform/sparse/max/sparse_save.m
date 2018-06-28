@@ -4,11 +4,11 @@ clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 %init the grid and seed info
-size = 50;
+scale = 50;
 %setup the location of seed
 numseed = 10;
 mcolor = rand(numseed,3);
-pos = randi([1,size],numseed,2);
+pos = randi([1,scale],numseed,2);
 
 pos = [16    30
     46    33
@@ -34,13 +34,13 @@ mcolor = [
     0.0680    0.3868    0.0358
     ];
 
-neighbor = zeros(numseed,2*size);
+neighbor = zeros(numseed,2*scale);
 maxv = zeros(numseed,1);
 
 %%
 %manhattan distance
-for i = 1:size
-    for j = 1:size
+for i = 1:scale
+    for j = 1:scale
         dis = [];
         
         for k = 1:numseed
@@ -62,7 +62,7 @@ for i = 1:size
 end
 % 0.3028
 [v,itmp] = min(maxv);
-neitmp = size*size;
+neitmp = scale*scale;
 
 for i = 1:numseed
     if maxv(i) == v
@@ -78,7 +78,7 @@ S = [];
 for i = 1:10
     sumtmp = 0;
     
-    for j = 1:2*size
+    for j = 1:2*scale
         sumtmp = sumtmp + neighbor(i,j);
         if sumtmp >= neitmp
             S = [S;j];
@@ -97,8 +97,8 @@ figure
 hold on
 savepro = 0;
 
-for i = 1:size
-    for j = 1:size
+for i = 1:scale
+    for j = 1:scale
         dis = [];
         
         for k = 1:numseed
