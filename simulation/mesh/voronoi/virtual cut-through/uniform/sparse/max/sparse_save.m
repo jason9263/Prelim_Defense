@@ -157,6 +157,9 @@ hold off
 savepro/(size*size)
 
 
+for i = 1:10
+    sum(neighbor(i, 1:S(i)))
+end
 
 
 
