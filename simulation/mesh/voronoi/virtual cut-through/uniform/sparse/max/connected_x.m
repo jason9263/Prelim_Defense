@@ -1,11 +1,11 @@
-function c = connected_x(ix,x,label,matrix)
+function c = connected_x(ix,x,iy,y,label,matrix)
 
 c = -1;
-for i = ix  : x
+for indexi = ix  : x
     sign = 0;
     
-    for j = 1 :50
-        if matrix(j,i) == 0 || matrix(j,i) == label
+    for indexj = iy :y
+        if matrix(indexi,indexj) == 0 || matrix(indexi,indexj) == label
             sign = 1;
             break;
         end
