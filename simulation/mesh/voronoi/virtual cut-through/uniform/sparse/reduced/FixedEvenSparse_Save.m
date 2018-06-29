@@ -11,16 +11,17 @@ numseed = 10;
 mcolor = rand(numseed,3);
 pos = randi([1,size],numseed,2);
 
-pos = [16    30
-    46    33
-    28    30
-    9    36
-    45    11
-    49     6
-    25    43
-    6    16
-    40   40
-    20    15];
+pos = [    22    43
+    46    32
+    10    18
+    14    26
+    8    21
+    7     4
+    44    12
+    29     7
+    28    10
+    8    12
+    ];
 
 mcolor = [
     0.5181    0.2548    0.9160
@@ -34,6 +35,7 @@ mcolor = [
     0.6951    0.6022    0.4714
     0.0680    0.3868    0.0358
     ];
+
 
 neighbor = zeros(numseed,2*size);
 maxv = zeros(numseed,1);
@@ -63,16 +65,27 @@ for i = 1:size
 end
 % 0.3028
 %%
-neitmp = sum(neighbor(10,:))
+tmpsum = [];
+for i = 1:10
+    tmpsum = [tmpsum;sum(neighbor(i,:))];
+end
+
+[neitmp,neitmpindex] = min(tmpsum);
+
+
 S = [];
 for i = 1:10
     sumtmp = 0;
-
     for j = 1:2*size
         sumtmp = sumtmp + neighbor(i,j);
         if sumtmp >= neitmp
             S = [S;j];
             break
+        else
+            if neighbor(i,j) == 0
+                S = [S;j];
+                break
+            end
         end
     end
     
@@ -92,15 +105,7 @@ for i = 1:size
         end
         
         [minv,index] = min(dis);
-        
-        if minv > 0
-            
-            neighbor(index,minv) = neighbor(index,minv) + 1;
-            
-            maxv(index) = max(maxv(index),minv);
-            
-        end
-        
+                
         stmp = S(index);
         if minv <= stmp
             savepro = savepro +1;
@@ -122,8 +127,9 @@ for k = 1:numseed
     
 end
 grid on
-xlabel('longitude geographical coordinate');
-ylabel('latitude geographical coordinate');
+xlabel('Longitude geographical coordinate');
+ylabel('Latitude geographical coordinate');
+title('Reduced Voronoi Division');
 hold off
 
 %%
@@ -149,7 +155,7 @@ legend('1','2','3','4','5','6','7','8','9','10');
 hold off
 
 savepro/(size*size)
-%%
+
 
 
 

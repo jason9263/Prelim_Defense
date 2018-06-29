@@ -95,7 +95,16 @@ for i = 51:100
                 plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
             end
         end
-
+        
+        
+        %         if minv <= S(index)
+        %         end
+        %         if mod(index,10) == 0
+        %             plot(i,j,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+        %         else
+        %             plot(i,j,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        %         end
+        
     end
 end
 %%
@@ -125,8 +134,8 @@ plot(X,Y,'r-');
 
 xlim([50,100]);
 ylim([50 100]);
-xlabel('longitude geographical index');
-ylabel('latitudinal geographical index');
+xlabel('Longitude geographical index');
+ylabel('Latitudinal geographical index');
 title('Placement of Processors');
 hold off
 %%

@@ -11,10 +11,6 @@ for i = x - dis : x + dis
         for u = j2:j1
 
             if u >= 1 && u <= n && matrix(i,u) == 0
-                
-                if label == 2 && i == 50 && u == 42
-                    label;
-                end
                 c = connected(i,u,x,y,label,matrix);
                 if c == 1
                     dpos = [dpos;i,u];

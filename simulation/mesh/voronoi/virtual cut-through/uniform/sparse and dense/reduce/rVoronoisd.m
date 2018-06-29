@@ -1,7 +1,6 @@
 %%
 clear
 clc
-
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 [mcolor,pos] = init;
 
@@ -45,15 +44,17 @@ for k = 1:10
     tmp = pos{k};
     hold on
     plot(tmp(:,1), tmp(:,2),'k*');
+    txt = num2str(k);
+    text(tmp(1,1)+ 1,tmp(1,2),txt);
 end
 
 xlim([0 50]);
 ylim([0 50]);
 grid on
 
-xlabel('latitude index');
-ylabel('longitude index');
-
+xlabel('Longitude geographical coordinate');
+ylabel('Latitude geographical coordinate');
+title('Constrianed Voronoi Diagram');
 hold off
 %%
 figure
@@ -78,7 +79,8 @@ for i = 1:numseed
         if sumtmp >= neitmp
             S = [S;j];
             break;
-        else if neighbor(i,j) == 0
+        else
+            if neighbor(i,j) == 0
                 S = [S;j];
                 break;
             end
@@ -101,14 +103,6 @@ for i = 1:50
         
         [minv,index] = min(sd);
         
-        if minv > 0
-            
-            neighbor(index,minv) = neighbor(index,minv) + 1;
-            
-            maxv(index) = max(maxv(index),minv);
-            
-        end
-        
         if minv <= S(index)
             plot(i,j,'o','MarkerEdgeColor',[mcolor(index,:)],'MarkerFaceColor',[mcolor(index,:)]);
             
@@ -123,14 +117,17 @@ for k = 1:10
     tmp = pos{k};
     hold on
     plot(tmp(:,1), tmp(:,2),'k*');
+    txt = num2str(k);
+    text(tmp(1,1)+ 1,tmp(1,2),txt);
 end
 
 xlim([0 50]);
 ylim([0 50]);
 grid on
 
-xlabel('latitude index');
-ylabel('longitude index');
+xlabel('Longitude geographical coordinate');
+ylabel('Latitude geographical coordinate');
+title('Reduced Constrianed Voronoi Diagram');
 
 hold off
 %%
@@ -141,8 +138,8 @@ grid on
 sumcore = 0;
 for i = 1:numseed
     title = [];
-    title = [1 neighbor(i,1:S(i))];
-    %title = [1 neighbor(i,1:min(maxv))];
+    %title = [1 neighbor(i,1:S(i))];
+    title =  [1 neighbor(i,1:maxv(i,:))];
     %sum(title)
     %sumcore = sumcore + sum(title);
     nunitm_c(title,mcolor(i,:));
@@ -160,8 +157,8 @@ grid on
 sumcore = 0;
 for i = 1:numseed
     title = [];
-    %title = [1 neighbor(i,1:S(i))];
-    title = [1 neighbor(i,1:maxv(i,:))];
+    title = [1 neighbor(i,1:S(i))];
+    %title = [1 neighbor(i,1:maxv(i,:))];
     %sum(title)
     %sumcore = sumcore + sum(title);
     nunitm_c(title,mcolor(i,:));

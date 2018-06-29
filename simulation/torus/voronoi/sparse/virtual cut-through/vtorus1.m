@@ -73,8 +73,8 @@ for k = 1:numseed
     text(pos(k,1)+ 1,pos(k,2),txt);
 end
 
-xlabel('longitude geographical index');
-ylabel('latitudinal geographical index');
+xlabel('Longitude geographical index');
+ylabel('Latitudinal geographical index');
 title('Placement of Processors');
 
 hold off

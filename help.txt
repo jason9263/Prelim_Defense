@@ -1,15 +1,46 @@
+
+
+
 pos = [16    30
     46    33
     28    30
-    9    36
+    9     36
     45    11
     30     6
     25    43
-    6    16
-    40   40
+    6     16
+    40    40
     20    15];
 
-mcolor = [
+mcolor = [    0.1622    0.4505    0.1067
+    0.7943    0.0838    0.9619
+    0.3112    0.2290    0.0046
+    0.5285    0.9133    0.7749
+    0.1656    0.1524    0.8173
+    0.6020    0.8258    0.8687
+    0.2630    0.5383    0.0844
+    0.6541    0.9961    0.3998
+    0.6892    0.0782    0.2599
+    0.7482    0.4427    0.8001];
+
+Virtual cut through
+
+Store and Forward
+
+
+pos = [    22    43
+    46    32
+    10    18
+    14    26
+    8    21
+    7     4
+    44    12
+    29     7
+    28    10
+    8    12
+    ];
+
+    mcolor = [
     0.5181    0.2548    0.9160
     0.9436    0.2240    0.0012
     0.6377    0.6678    0.4624
@@ -22,3 +53,34 @@ mcolor = [
     0.0680    0.3868    0.0358
     ];
 
+    
+
+
+
+
+
+The equivalence inverse processing speed :
+$$T_{f,n} = 1*w_{eq}*T_{cp}$$
+$$w_{eq} = \alpha_{0}*w$$
+The speedup is :
+$$Speedup = \frac{T_{f, 0}}{T_{f, n}}= \frac{\omega T_{cp}}{\alpha_{0}\omega T_{cp}} = \frac{1}{\alpha_{0}}$$
+
+
+
+
+Our objective is to propose a general algorithm framework to minimize the makespan and give quantitative model analysis utilizing the flow matrix.  The constraint comes from the divisible load theory linear equations.   
+
+\title{LinearProgram}
+\maketitle
+\begin{alignat}{2}
+\min\quad & T_{f,n}\\
+\mbox{s.t.}\quad
+&\sum_{i \in 0 \cdots n} \alpha_{i} = 1, &\quad& \\
+&\alpha_{i} \geq 0, &{}& 
+\end{alignat}
+
+
+
+
+xlabel('Longitude geographical coordinate');
+ylabel('Latitude geographical coordinate');

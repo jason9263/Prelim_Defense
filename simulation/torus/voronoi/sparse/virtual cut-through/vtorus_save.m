@@ -62,7 +62,8 @@ for i = 1:numseed
         if sumtmp >= neitmp
             S = [S;j];
             break;
-        else if neighbor(i,j) == 0
+        else
+            if neighbor(i,j) == 0
                 S = [S;j];
                 break;
             end
@@ -84,17 +85,7 @@ for i = 51:100
         
         [minv,index] = min(dis);
         
-        if minv > 0
-            if mod(index,10) == 0
-                neighbor(10,minv) = neighbor(10,minv) + 1;
-                maxv(10) = max(maxv(10),minv);
-            else
-                tmpindex = mod(index,10);
-                neighbor(tmpindex,minv) = neighbor(tmpindex,minv) + 1;
-                tmp = maxv(tmpindex);
-                maxv(tmpindex) = max(tmp,minv);
-            end
-        end
+
         
         u = (i-50)/50;
         v = (j-50)/50;
@@ -113,23 +104,23 @@ for i = 51:100
             index = mod(index,10);
         end
         
-        %         if minv <= S(index)
-        %             if mod(index,10) == 0
-        %                 plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-        %             else
-        %                 plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
-        %             end
-        %
-        %         end
-        
-        
         if minv <= S(index)
+            if mod(index,10) == 0
+                plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+            else
+                plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+            end
+            
         end
-        if mod(index,10) == 0
-            plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
-        else
-            plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
-        end
+        
+        
+        %         if minv <= S(index)
+        %         end
+        %         if mod(index,10) == 0
+        %             plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(10,:)],'MarkerFaceColor',[mcolor(10,:)]);
+        %         else
+        %             plot3(x,y,z,'o','MarkerEdgeColor',[mcolor(mod(index,10),:)],'MarkerFaceColor',[mcolor(mod(index,10),:)]);
+        %         end
         
         
         
@@ -164,8 +155,8 @@ view([-52,64]);
 
 set(gca,'linewidth',1,'fontsize',25,'fontname','Times');
 
-xlabel('longitude geographical index','fontweight','bold','FontSize',25);
-ylabel('latitudinal geographical index','fontweight','bold','FontSize',25);
+xlabel('Longitude geographical index','fontweight','bold','FontSize',25);
+ylabel('Latitudinal geographical index','fontweight','bold','FontSize',25);
 title('Placement of Processors','fontweight','bold','FontSize',25);
 %%
 clear title xlabel ylabel
@@ -179,6 +170,7 @@ for i = 1:10
     
     title = [];
     title = [1 neighbor(i,1:S(i,1))];
+    %title = [1 neighbor(i,1:maxv(i))];
     %title = [1 neighbor(i,1:min(maxv))];
     nunitm_c(title,mcolor(i,:));
     %nunitm_no(title);

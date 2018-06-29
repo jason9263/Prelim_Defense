@@ -22,7 +22,7 @@ while 1 > 0
     
     x = pos(index,1);
     y = pos(index,2);
-    dis = S(index) + 1;
+    dis = S_ext(index) + 1;
     
     if index == 2
         index;

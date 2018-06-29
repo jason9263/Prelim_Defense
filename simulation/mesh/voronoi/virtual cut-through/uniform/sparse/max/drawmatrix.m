@@ -1,3 +1,4 @@
+clear xlabel ylabel title
 figure
 grid on
 for i = 1:50
@@ -23,8 +24,9 @@ for k = 1:numseed
     
 end
 
-xlabel('longitude geographical coordinate');
-ylabel('latitude geographical coordinate');
+xlabel('Longitude geographical coordinate');
+ylabel('Latitude geographical coordinate');
+title('Augmented Reduced Voronoi Division');
 hold off
 
 
@@ -43,8 +45,8 @@ for i = 1:numseed
     %title = [1 neighbor(i,1:min(maxv))];
     title = [1 neighbor(i,1: S_ext(i))];
     sumtitle = [sumtitle sum(title)];
-    nunitm_c(title,mcolor(i,:));
-    %nunitm_no_c(title,mcolor(i,:));
+    %nunitm_c(title,mcolor(i,:));
+    nunitm_no_c(title,mcolor(i,:));
     
 end
 
