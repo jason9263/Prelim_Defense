@@ -1,5 +1,6 @@
 clear
 clc
+addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 avg = 0;
 totaltime = 1;
 totalnum = 0;
@@ -23,10 +24,7 @@ for scale = 50
         [S] = getS(scale,numseed,neighbor);
         
         
-[savrpro] = voronoi_cell_s(scale,pos,size,numseed,mcolor,neighbor,maxv,plot_no);
-        
-        
-        
+        [savrpro] = voronoi_cell_s(scale,pos,scale,numseed,mcolor,neighbor,maxv,1);
         
         %3 is showing S
         %1 is show virtul cut through
