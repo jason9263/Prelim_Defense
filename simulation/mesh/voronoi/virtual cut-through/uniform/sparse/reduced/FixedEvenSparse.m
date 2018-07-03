@@ -2,12 +2,12 @@ clear
 clc
 addpath(genpath('D:\Dropbox\Prelim_Defense\simulation\lib'));
 %init the grid and seed info
-size = 50;
+scale = 50;
 %setup the location of seed
 numseed = 10;
 mcolor = rand(numseed,3);
-pos = randi([1,size],numseed,2);
-neighbor = zeros(numseed,2*size);
+pos = randi([1,scale],numseed,2);
+neighbor = zeros(numseed,2*scale);
 maxv = zeros(numseed,1);
 [pos,mcolor] = getposcolor();
 %%
@@ -15,7 +15,7 @@ maxv = zeros(numseed,1);
 figure
 hold on
 %plot_no == 1 draw the core
-[neighbor,maxv] = getneighbor_maxv(pos,size,numseed,mcolor,neighbor,maxv,1);
+[neighbor,maxv] = getneighbor_maxv(pos,scale,numseed,mcolor,neighbor,maxv,1);
 hold off
 
 %%

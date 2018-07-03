@@ -24,26 +24,32 @@ for i = 1:size
         else
             
         end
-
+        
     end
 end
 
 
 %%
 %show the seed position
-for k = 1:numseed
+
+if plot_no == 1
     
-    plot(pos(k,1),pos(k,2),'k*');
-    
-    txt = num2str(k);
-    
-    text(pos(k,1)+ 1,pos(k,2),txt);
-    
+    for k = 1:numseed
+        
+        plot(pos(k,1),pos(k,2),'k*');
+        
+        txt = num2str(k);
+        
+        text(pos(k,1)+ 1,pos(k,2),txt);
+        
+    end
+    %
+    xlabel('Longitude geographical coordinate');
+    ylabel('Latitude geographical coordinate');
+    title('Voronoi Division');
+
 end
-%
-xlabel('Longitude geographical coordinate');
-ylabel('Latitude geographical coordinate');
-title('Voronoi Division');
+
 
 end
 
