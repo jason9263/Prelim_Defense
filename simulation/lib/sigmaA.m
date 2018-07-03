@@ -1,5 +1,5 @@
 function [A] = sigmaA(sigma,tline)
-
+warning off;
 sline = size(tline);
 total = sline(2);
 

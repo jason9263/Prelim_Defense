@@ -1,4 +1,4 @@
-function nunitm(tline,c)
+function nunitm_c(tline,c)
 % clear
 %addpath(genpath('C:\Google Drive\Prelim-Defense\defense_tom\simulation'));
 %save the times as the ratio of ztcm and wtcp

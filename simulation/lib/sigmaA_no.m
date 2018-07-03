@@ -1,5 +1,5 @@
 function [A] = sigmaA_no(sigma,tline)
-
+warning off;
 sline = size(tline);
 index = 1;
 

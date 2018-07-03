@@ -2,7 +2,7 @@ function fraction(tline)
 % clear
 %addpath(genpath('C:\Google Drive\Prelim-Defense\defense_tom\simulation'));
 %save the times as the ratio of ztcm and wtcp
-
+warning off;
 times= [];
 %min ratio
 %max ratio
