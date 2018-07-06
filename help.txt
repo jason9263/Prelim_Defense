@@ -75,7 +75,21 @@ Our objective is to propose a general algorithm framework to minimize the makesp
 \end{alignat}
 
 
-
-
 xlabel('Longitude geographical coordinate');
 ylabel('Latitude geographical coordinate');
+
+
+
+
+\title{LinearProgram}
+\maketitle
+\begin{alignat}{2}
+\min\quad & \hat{T_{f}}\\
+\mbox{s.t.}\quad
+&\sum_{i \in 0 \cdots (n-1)} \alpha_{i} = 1, &\quad& \\
+& 1 \geq \alpha_{i} \geq 0, &{i \in 0 \cdots (n-1)}& \\
+& T_{f,i} = T_{f,0}, &{i \in 1 \cdots (n-1)}& \\
+&\alpha_{0}wT_{cp} = \hat{T_{f}}, &{}& \\
+&\qquad\vdots , &{}&\\
+&  (\hat{\alpha_{1}} + \cdots \hat{\alpha_{k-1}} ) + \hat{\alpha_{k}}wT_{cp} = \hat{T_{f}}, &{}& 
+\end{alignat}
