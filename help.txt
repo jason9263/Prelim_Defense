@@ -24,7 +24,6 @@ Virtual cut through
 
 Store and Forward
 
-
 pos = [    22    43
     46    32
     10    18
@@ -51,9 +50,6 @@ pos = [    22    43
     ];
 
     
-
-
-
 The equivalence inverse processing speed :
 $$T_{f,n} = 1*w_{eq}*T_{cp}$$
 $$w_{eq} = \alpha_{0}*w$$
@@ -61,24 +57,8 @@ The speedup is :
 $$Speedup = \frac{T_{f, 0}}{T_{f, n}}= \frac{\omega T_{cp}}{\alpha_{0}\omega T_{cp}} = \frac{1}{\alpha_{0}}$$
 
 
-
-
-Our objective is to propose a general algorithm framework to minimize the makespan and give quantitative model analysis utilizing the flow matrix.  The constraint comes from the divisible load theory linear equations.   
-
-\title{LinearProgram}
-\maketitle
-\begin{alignat}{2}
-\min\quad & T_{f,n}\\
-\mbox{s.t.}\quad
-&\sum_{i \in 0 \cdots n} \alpha_{i} = 1, &\quad& \\
-&\alpha_{i} \geq 0, &{}& 
-\end{alignat}
-
-
 xlabel('Longitude geographical coordinate');
 ylabel('Latitude geographical coordinate');
-
-
 
 
 \title{LinearProgram}
@@ -86,10 +66,78 @@ ylabel('Latitude geographical coordinate');
 \begin{alignat}{2}
 \min\quad & \hat{T_{f}}\\
 \mbox{s.t.}\quad
-&\sum_{i \in 0 \cdots (n-1)} \alpha_{i} = 1, &\quad& \\
-& 1 \geq \alpha_{i} \geq 0, &{i \in 0 \cdots (n-1)}& \\
-& T_{f,i} = T_{f,0}, &{i \in 1 \cdots (n-1)}& \\
-&\alpha_{0}wT_{cp} = \hat{T_{f}}, &{}& \\
-&\qquad\vdots , &{}&\\
-&  (\hat{\alpha_{1}} + \cdots \hat{\alpha_{k-1}} ) + \hat{\alpha_{k}}wT_{cp} = \hat{T_{f}}, &{}& 
+&\mathop{\sum_{j=0}^{k-1}\sum_{i=0}^{S_{j}-1}} \hat{\alpha_{j,i}} = 1\\
+& 1 \geq \hat{\alpha_{j,i}} \geq 0, &{}& \\
+& T_{f,i} = T_{f,0}, &{i \in 1 \cdots (m*n-1)}& \\
+&\hat{\alpha_{j,0}}wT_{cp} = \hat{T_{j,f}}, &{j \in 0 \cdots (k-1)}& \\
+&\qquad \vdots , &{}&\\
+&  (\hat{\alpha_{j,1}} + \cdots \hat{\alpha_{j,l_{j}-2}}) + \hat{\alpha_{j,l_{j}-1}}wT_{cp} = \hat{T_{j,f}}, &{j \in 0 \cdots (k-1)}& 
 \end{alignat}
+
+
+\title{LinearProgram}
+\maketitle
+\begin{alignat}{2}
+\min\quad & \hat{T_{f}}\\
+\mbox{s.t.}\quad
+&\mathop{\sum_{j=0}^{k-1}\sum_{i=0}^{S_{j}-1}} \hat{\alpha_{j,i}} = 1\\
+& 1 \geq \hat{\alpha_{j,i}} \geq 0, &{}& \\
+& T_{f,i} = \hat{T_{j,f}}, &{i \in 0 \cdots (S_{j}-1)}& \\
+&\hat{\alpha_{j,0}}wT_{cp} = \hat{T_{j,f}}, &{j \in 0 \cdots (k-1)}& \\
+&\qquad \vdots , &{}&\\
+&  (\hat{\alpha_{j,1}} + \cdots \hat{\alpha_{j,l_{j}-2}})zT_{cm} + \hat{\alpha_{j,l_{j}-1}}wT_{cp} = \hat{T_{j,f}}, &{j \in 0 \cdots (k-1)}& 
+\end{alignat}
+
+
+\title{LinearProgram}
+\maketitle
+\begin{alignat}{2}
+\max\quad & Sp_{b}\\
+\mbox{s.t.}\quad
+&\mathop{\sum_{j=0}^{k-1}\sum_{i=0}^{S_{j}-1}} \hat{\alpha_{j,i}} = 1\\
+& 1 \geq \hat{\alpha_{j,i}} \geq 0, &{}& \\
+& T_{f,i} = \hat{T_{j,f}}, &{i \in 0 \cdots (S_{j}-1)}& \\
+&\hat{\alpha_{j,0}}wT_{cp} = \hat{T_{j,f}}, &{j \in 0 \cdots (k-1)}& \\
+&\qquad \vdots , &{}&\\
+&  (\hat{\alpha_{j,1}} + \cdots \hat{\alpha_{j,l_{j}-2}} )zT_{cm} + \hat{\alpha_{j,l_{j}-1}}wT_{cp} = \hat{T_{j,f}}, &{j \in 0 \cdots (k-1)}& \\
+& Sp_{i} = Sp_{b} + \epsilon, &{i \in 0 \cdots (k-1)}& \\
+& \epsilon \geq 0 ,&{}&
+\end{alignat}
+
+
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=1\columnwidth]{figure/torus_even.eps}
+\caption{Subgraph and individual data injection division on torus network}
+\label{fig:torus_even}
+\end{figure}
+\newpage
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=1\columnwidth]{figure/torus_even_save.eps}
+\caption{Subgraph and individual data injection constrained Voronoi diagram division on torus network}
+\label{fig:torus_even_save}
+\end{figure}
+\newpage
+
+
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=1\columnwidth]{figure/torus_even_speedup.eps}
+\caption{Subgraph and individual data injection speedup curves on torus network}
+\label{fig:torus_even_speedup}
+\end{figure}
+\newpage
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=1\columnwidth]{figure/torus_even_save_speedup.eps}
+\caption{Subgraph and individual data injection constrained Voronoi diagram division speedup curves on torus network}
+\label{fig:torus_even_save_speedup}
+\end{figure}
+\newpage

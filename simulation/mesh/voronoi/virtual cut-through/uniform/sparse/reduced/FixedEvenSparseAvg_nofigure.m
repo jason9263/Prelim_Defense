@@ -73,15 +73,15 @@ figure
 hold on
 
 X = [35 40 45 50 55 60];
-Y = [ 0.4057 0.4099  0.4431 0.4124 0.3887 0.4043];
+Y = [40.57 40.99  44.31 41.24 38.87 40.43];
 
 plot(X,Y);
 grid on
 
 xlabel('Longitude number of cores');
-ylabel('Saved Percentage');
+ylabel('Percentage Processors Saved');
 title('RVDA Saved Percentage');
-ylim([0,0.5]);
+ylim([0,50]);
 
 hold off
 %%

@@ -27,11 +27,11 @@ ressum / times
 
 %%
 X = 35:5:55;
-Y =[0.3702 0.3651 0.3301 0.3693 0.3492 ];
+Y =[37.02 36.51 33.01 36.93 34.92];
 plot(X',Y');
 grid on
 xlabel('Number of Processors');
-ylabel('Percentage Save');
-ylim([0.1 0.5]);
-title('Percentage Save vs Number of Processors');
+ylabel('Percentage Saved Processors');
+ylim([0 50]);
+title('Percentage Saved Processors vs Number of Processors ');
 %%
