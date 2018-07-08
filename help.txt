@@ -158,3 +158,17 @@ $$Speedup = \frac{T_{f}}{\hat{T_{f}}}= \frac{\omega T_{cp}}{\alpha_{0}\omega T_{
 \end{tabular}
 \label{tab:gt}
 \end{table}
+
+
+
+\Tab{gt_max} shows the augmented Voronoi cells and speedup curves simulation result. 
+
+\begin{table}[ht]
+\caption{The $10$ constrained Voronoi cells and speedup curves}
+\centering
+\begin{tabular}{c}
+\includegraphics[scale=0.63]{figure/rsd_even.eps}\\
+\includegraphics[scale=0.63]{figure/rsd_even_speedup.eps}
+\end{tabular}
+\label{tab:gt_max}
+\end{table}
