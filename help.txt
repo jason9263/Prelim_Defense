@@ -141,3 +141,20 @@ ylabel('Latitude geographical coordinate');
 \label{fig:torus_even_save_speedup}
 \end{figure}
 \newpage
+
+
+
+$$\hat{T_{f}} = 1*w_{eq}*T_{cp}$$
+$$w_{eq} = \alpha_{0}*w$$
+$$Speedup = \frac{T_{f}}{\hat{T_{f}}}= \frac{\omega T_{cp}}{\alpha_{0}\omega T_{cp}} = \frac{1}{\alpha_{0}} = 4- \sigma$$
+
+
+\begin{table}[ht]
+\caption{The $10$ Reduced Voronoi Cells and speedup curves}
+\centering
+\begin{tabular}{c}
+\includegraphics[scale=0.63]{figure/voronoi_even_cells_save.eps}\\
+\includegraphics[scale=0.63]{figure/voronoi_even_speedup_save.eps}
+\end{tabular}
+\label{tab:gt}
+\end{table}
