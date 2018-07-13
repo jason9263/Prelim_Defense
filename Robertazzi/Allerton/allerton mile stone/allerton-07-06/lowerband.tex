@@ -1,0 +1,21 @@
+Considering a $n*n$ mesh network, there are $l$ data load injections, the makespan is constrained by the makespan of bottleneck, so the best solution is each data load injection deploys data to its community, which is $\frac{n*n}{m}$ cores.  
+
+For example, we calculate a $50*50$ mesh network and there are $l = 10$ load data injections.
+Each node transmit data to $\frac{50*50}{10} = 250$ cores.  The first row of flow matrix in best situation is $row_{\mu}$ = [1     4     8    12    16    20    24   28  32  36  40  29];
+
+
+
+\begin{itemize}
+\item Sp : Speedup of an equivalence computation cell.
+\item $optimal_{p}$ : practical optimal speedup of a load data injection, which is NP hard \cite{Liu_schedulingdivisible}
+\item $optimal_{i}$ : optimal speedup of a load data injection in ideal situation
+\item $\beta$ :  $\frac{Sp}{optimal_{i}}$ is the ratio between the speedup of an algorithm (i.e. EPSA or RMDVDA) over the practical ideal situation speedup.
+\end{itemize}
+
+According to the intuitive and heuristic algorithm, we can give a lower band of this algorithm.
+
+$$\beta = \frac{Sp}{optimal_{i}} \leq \frac{Sp}{optimal_{p}}$$
+
+$$Sp  \geq \beta * optiaml_{p}$$
+
+We calculate the speedup of a community and the speedup of ideal situation.  In other words, we guarantee obtain a $\beta * optimal_{i}$ times approximation speedup of our algorithm.

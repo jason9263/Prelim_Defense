@@ -1,0 +1,19 @@
+\subsection{Related Literature}
+
+\subsubsection{Divisible Load Theory}
+Crucial to our success in the single and multiple injection point cases, is the use of divisible load scheduling theory [refs].  Developed over the past few decades, it assumes load is a continuous variable that can be arbitrarily partitioned among processors and links in a network.  Use is made of the divisible load scheduling’s optimality principle [ref], which say makespan is minimized when one forces all processors to stop at the same time (intuitively otherwise one could transfer load from busy to idle processors to achieve a better solution).  This leads to a series of chained linear flow and processing equations that can be solved by linear equation techniques, often yielding recursive and even closed form solutions for quantities such as makespan and speedup. 
+
+\subsubsection{Voronoi Diagrams}
+In the context of multiple injection point models, this paper represents 
+Jia  \cite{jia2010scheduling} proposes a genetic algorithm, which utilize a novel Graph Partitioning (GP) scheme to partition the network such that each source in the network gains a portion of network resources and then these sources cooperate to process their loads.  We utilize the Voronoi diagrams \cite{jia2010scheduling} in conjunction with divisible load scheduling for a significant applied problem. 
+
+In mathematics, a Voronoi diagram \cite{fortune1995voronoi} a partitioning of a plane into regions based on distance to points in a specific subset of the plane. For each seed there is a corresponding region consisting of all points closer to that seed than to any other. These regions are called Voronoi cells. 
+
+\subsection{Problem Description}
+Networks on chips (NOC) represent the smallest networks that have been implemented to date \cite{robertazzi2017computer}.  A popular choice for the interconnection network on such networks on chips is the rectangular mesh.  It is straightforward to implement and is a natural choice for a planar chip layout.
+
+Data to be processed can be inserted into the chip at one or more so-called “injection points”, that is node(s) in the mesh that forward the data to other nodes.  Beyond NOCs, injecting data into a parallel processor’s interconnection network has been done for some time, notably in IBM’s Bluegene machines \cite{krevat2002job}.  In this paper it is sought to determine, for a given set of injection points how, optimally or near-optimally, to assign load to different processors in a known timed pattern so as to process a load of data in a minimal amount of time (i.e. minimize makespan).  In this paper we succeed in presenting an optimal technique for single injection points in homogeneous meshes that involves no more complexity than linear equation solution.  For multiple injection points we present algorithms that produce near optimal solutions using Voronoi diagrams \cite{fortune1987sweepline} \cite{jia2010scheduling}.  The methodology presented here can be applied to a variety of switching/scheduling protocols besides those directly covered in this paper. 
+
+In this paper, we investigate the virtual cut-through switching \cite{kermani1979virtual}.  In the virtual cut-through environment, a node can begin relaying the first part of a message (packet) along a transmission path as soon as it starts to arrive at the node , that is, it doesn't have to wait to receive the entire message before it can begin forwarding the message.
+
+Equivalence computation \cite{robertazzi1993processor} is a technique, which consists of combining a cluster of processors as one whole equivalent processor to process a unit $1$ workload.

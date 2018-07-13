@@ -1,0 +1,155 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out
+                                                          % if you need a4paper
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4
+                                                          % paper
+
+\IEEEoverridecommandlockouts                              % This command is only
+                                                          % needed if you want to
+                                                          % use the \thanks command
+\overrideIEEEmargins
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+% The following packages can be found on http:\\www.ctan.org
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+%\usepackage{amsmath} % assumes amsmath package installed
+%\usepackage{amssymb}  % assumes amsmath package installed
+
+\title{\LARGE \bf
+Optimal Data Intensive Flows for Network on Chip Mesh Networks
+}
+%\author{ \parbox{3 in}{\centering Huibert Kwakernaak*
+%         \thanks{*Use the $\backslash$thanks command to put information here}\\
+%         Faculty of Electrical Engineering, Mathematics and Computer Science\\
+%         University of Twente\\
+%         7500 AE Enschede, The Netherlands\\
+%         {\tt\small h.kwakernaak@autsubmit.com}}
+%         \hspace*{ 0.5 in}
+%         \parbox{3 in}{ \centering Pradeep Misra**
+%         \thanks{**The footnote marks may be inserted manually}\\
+%        Department of Electrical Engineering \\
+%         Wright State University\\
+%         Dayton, OH 45435, USA\\
+%         {\tt\small pmisra@cs.wright.edu}}
+%}
+
+\author{Junwei Zhang$^{1}$ Esther Arkin$^{1}$ and Thomas Robertazzi$^{2}$% <-this % stops a space
+\thanks{}% <-this % stops a space
+\thanks{$^{1}$Junwei Zhang, Ph.D. candidate of Applied Mathematics and Statistics department,
+        Stony Brook University, stony brook, NY 11794
+        {\tt\small junwei.zhang@stonybrook.edu}}%  
+\thanks{$^{1}$Esther Arkin, Professor of Applied Mathematics and Statistics department, Stony Brook University,
+        stony brook, NY 11794
+        {\tt\small esther.arkin@stonybrook.edu}}%
+\thanks{$^{2}$Thomas Robertazzi, Professor of Electrical and Computer Engineering department, Stony Brook University,
+        stony brook, NY 11794
+        {\tt\small Thomas.Robertazzi@stonybrook.edu}}%
+}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} 
+\usepackage{biblatex}
+\usepackage{graphicx}		% to see postscript files
+\usepackage{empheq}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage[dvips]{epsfig}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+\usepackage{subcaption}
+\usepackage{mathrsfs}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{url}
+\usepackage{amsmath,empheq}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\addbibresource{references.bib}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+\input{abstract.tex}
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{INTRODUCTION}
+
+\input{introduction.tex}
+
+\input{def_notation.tex}
+
+To achieve the minimum time solution is obtained by forcing the processors over a network to stop processing simultaneously.  Intuitively, this is because the solution could be improved by transfer load from some busy processors to idle ones  \cite{bharadwaj1996scheduling} \cite{sohn1992optimal}.  
+
+\section{Equivalence Computation}
+
+\subsection{2*2 mesh network} 
+\input{2t2mesh.tex}
+
+\subsection{2*n mesh network}
+\input{2tnmesh.tex}
+In addition, we can extend the flow matrix pattern to $m*n$ mesh network.
+
+%\subsection{m*n mesh network}
+%\input{mtnmesh.tex}
+
+\subsection{Proof of solution existence and unique}
+We take $2*10$ mesh network as an example, other $m*n$ mesh network is proved by the same mathematics technique.
+
+\input{prove.tex}
+
+%\subsection{Sensitivity Analysis}
+%\input{sa.tex}
+
+\section{Multi-source Assignment Heuristic Algorithm}
+
+\subsection{Equivalence Computation Algorithm}
+\input{eqm.tex}
+
+\subsection{Intuitive Voronoi Division Algorithm}
+\input{multim.tex}
+
+\subsection{Reduced Voronoi Division Algorithm}
+\input{reduced.tex}
+
+\subsection{Lower Band of Intuitive and Heuristic Algorithm}
+\input{lowerband.tex}
+
+\section{CONCLUSIONS}
+
+\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{APPENDIX}
+
+\section*{ACKNOWLEDGMENT}
+
+\printbibliography
+
+\end{document}

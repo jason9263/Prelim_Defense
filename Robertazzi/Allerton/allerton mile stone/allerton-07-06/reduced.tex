@@ -1,0 +1,47 @@
+After investigation, we find the makespan depends on the bottleneck makespan.  In other words, if other divisions own more processors than the bottleneck cell, it does not help to minimize the makespan.  
+
+Our objective is to propose a heuristic algorithm to minimize the makespan and give quantitative model analysis utilizing the flow matrix.  In each cell, the constraint comes from the divisible load theory linear equations.   
+
+The merits of new algorithm is finishing the task within the same makespan as MDVDA, yet utilizing less processors resource.
+
+\title{LinearProgram}
+\maketitle
+\begin{alignat}{2}
+\min\quad & T_{f,n}\\
+\mbox{s.t.}\quad
+&\sum_{i \in 0 \cdots n} \alpha_{i} = 1, &\quad& \\
+&\alpha_{i} \geq 0, &{}& 
+\end{alignat}
+
+
+The heuristic algorithm is named as \textbf{\textit{Reduced Manhattan Distance Voronoi Diagram Algorithm}}:
+\begin{algorithm}
+\caption{Reduced Manhattan Distance Voronoi Diagram Algorithm (RMDVDA)}
+\begin{algorithmic} 
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\REQUIRE $k$ data injection positions
+\ENSURE $m*n$ processor data fractions
+\STATE Calculate $k$ Voronoi cells with Manhattan distance.
+\STATE Calculate $k$ Voronoi cells' radius $R_{i}$.
+\STATE Calculate $k$ flow matrix $A_{i}$.
+\STATE $depth_{min} = \min ({Sp_{i}})$'s $R_{i}$.
+\STATE Calculate the reduced Voronoi cells by setting the $depth_{i} = depth_{min}$ in each Voronoi cell.
+\STATE Calculate reduced Voronoi cell's flow matrix $\hat{A_{i}}$.
+\STATE Display reduced Voronoi cells.
+\STATE Illustrate reduced Voronoi cells' speedup curves.
+\end{algorithmic}
+\end{algorithm}
+
+In term of the time complexity :  
+\begin{itemize}
+\item The time complexity of Manhattan distance Voronoi cells is $O(k*m*n)$;
+\item The time complexity of flow matrix determinant is $O(r^{3})$. $r$ is the rank of flow matrix.
+\item So the total time complexity is $O(k*\max (m,n)^{3})$.
+\end{itemize}
+
+It displays that $10$ cells' equivalence computation is more balanced than the initial setting, and the whole cluster finishes processing load within the same time by less processors.
+After $1000$ round random sampling experiments, we obtain the average saved processors ratio.
+
+From the average saved processors ratio  , it shows the average percentage of saved processor is about $35 \%$.  

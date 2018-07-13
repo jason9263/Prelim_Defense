@@ -1,0 +1,40 @@
+\section{Assumption and Notion}
+
+\subsection{Assumption}
+The following assumptions are used throughout the paper:
+
+\begin{itemize}
+\item Under virtual cut-through switching, a node can relay the beginning bit of a message (packet) before the entire message is received. 
+\item For simplicity, return communication is not considered.  
+\item The communication delays are taken into consideration.  
+\item The time costs of computation and communication are assumed to be linear function of the data size.  
+\item The network environment is homogeneous, that is, all the processors have the same computation capacity.  The link speeds between any two unit cores are identical.   
+\item The number of outgoing ports in each processor is limited.  In NOC (network on chip), the port number is fixed 4 or 5  \cite{robertazzi2017computer}.    
+\item Single Path Communication : data transfer between two nodes follows a single path
+\item Homogeneous : a homogeneous (all link and processors speed are identical ) is assumed.
+\item Equivalence computation : the problem's objective function is how to partition and schedule the workloads amongst the processors to obtain the minimum makespan (finish time).  
+\item Multi-source assignment : how all processors can finish processing a unit $1$ workload at the same time utilizing fewer processors.
+\end{itemize}
+
+\subsection{Notions}
+The following notations and definitions are utilized:
+\begin{itemize}
+\item $P_{i}$: The $i$th processor.   $0  \leq i \leq m*n-1$.  
+\item $L_{i}$: The $i$th work load.   $1 \leq i \leq k$.  
+\item $D_{i}$: The minimum number of hops from the processor $P_{i}$ to the data load injection site $L$.  
+\item $level_{i}$: The processors have $i$ minimum Manhattan distance to the data injection node.
+\item $\alpha_{0}$: The load fraction assigned to the root processor.  
+\item $\alpha_{i}$: The load fraction assigned to the $i$th processor.  
+\item $\omega_{i}$: The inverse computing speed on the $i$th processor.  
+\item $\omega_{eq}$: The inverse computing speed on an equivalent node collapsed from a cluster of processors.  
+\item $z_{i}$: The inverse link speed on the $i$th link.  
+\item $T_{cp}$: Computing intensity constant.  The entire load is processed in time $\omega_{i}T_{cp}$ seconds on the $i$th processor.  
+\item $T_{cm}$: Communication intensity constant.  The entire load is transmitted in time $z_{i}T_{cm}$ seconds over the $i$th link.  
+\item $T_{f, n}$: The finish time of the whole processor network.  Here $T_{f, n}$ is equal to $\omega_{eq}T_{cp}$.  
+\item $T_{f, 0}$: The finish time for the entire divisible load solved on the root processor.  Here $T_{f, 0}$ is equal to $1 \times \omega_{0}T_{cp}$,  that is $\omega_{0}T_{cp}$.  
+\item $\sigma = \frac{zT_{cm}}{\omega T_{cp}}$: The ratio between the communication speed to the computation speed,  $0 < \sigma < 1$   \cite{bharadwaj1996scheduling}   \cite{hung2004switching}.  
+
+\item In multi-source situation, $\sum_{i = 1}^{k} L_{i} = 1$
+\item $\sum_{i = 0}^{m*n-1} \alpha_{i}= 1$
+\item $Speedup = \frac{T_{f, 0}}{T_{f, n}}= \frac{\omega T_{cp}}{\alpha_{0}\omega T_{cp}} = \frac{1}{\alpha_{0}}$
+\end{itemize}

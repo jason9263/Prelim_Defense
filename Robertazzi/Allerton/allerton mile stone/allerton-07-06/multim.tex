@@ -1,0 +1,32 @@
+Our objective is to propose an intuitive algorithm to minimize the makespan and give quantitative model analysis utilizing the flow matrix.  
+
+Also, in each cell, the constraint comes from the divisible load theory linear equations.   
+
+\title{LinearProgram}
+\maketitle
+\begin{alignat}{2}
+\min\quad & T_{f,n}\\
+\mbox{s.t.}\quad
+&\sum_{i \in 0 \cdots (n-1)} \alpha_{i} = 1, &\quad& \\
+&\alpha_{i} \geq 0, &{}&
+\end{alignat}
+
+The intuitive algorithm is named as \textbf{\textit{Manhattan Distance Voronoi Diagram Algorithm}}:
+\begin{algorithm}
+\caption{Manhattan Distance Voronoi Diagram Algorithm (MDVDA)}
+\begin{algorithmic} 
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\REQUIRE $k$ data injection positions
+\ENSURE $m*n$ processor data fractions
+\STATE Calculate $k$ Voronoi cells with Manhattan distance.
+\STATE Calculate $k$ flow matrix $A_{i}$.
+\STATE Display reduced Voronoi cells.
+\STATE Illustrate reduced Voronoi cells' speedup curves.
+\end{algorithmic}
+\end{algorithm}
+
+The time complexity of algorithm consists of two parts, one is about the determinant computation of flow matrix and the other is about the Manhattan distance Voronoi diagram. 
+
+

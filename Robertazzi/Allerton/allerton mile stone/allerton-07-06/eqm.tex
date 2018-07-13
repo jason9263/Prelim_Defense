@@ -1,0 +1,39 @@
+If the data injection positions consist of a connected subgraph of $G$, we use $G_{L}$ to present it.
+
+Our objective is to propose a general algorithm framework to minimize the makespan and give quantitative model analysis utilizing the flow matrix.  
+
+The constraint comes from the divisible load theory linear equations.   
+
+\title{LinearProgram}
+\maketitle
+\begin{alignat}{2}
+\min\quad & T_{f,n}\\
+\mbox{s.t.}\quad
+&\sum_{i \in 0 \cdots (n-1)} \alpha_{i} = 1, &\quad& \\
+&\alpha_{i} \geq 0, &{}& 
+\end{alignat}
+
+This algorithm is named as \textbf{\textit{Equivalence Processor Scheduling Algorithm (EPSA)}}.
+
+\begin{algorithm}
+\caption{Equivalence Processor Scheduling Algorithm (EPSA)}
+\begin{algorithmic} 
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\REQUIRE $k$ data injection positions
+\ENSURE $m*n$ processor data fractions $\alpha_{i}$
+\STATE Collapse the data injection processors into one ``big" equivalent processor  \cite{robertazzi1993processor}.
+\STATE Calculate $m*n$ processor's $D_{i}$.
+\STATE Obtain the flow matrix $A$.
+\STATE Calculate $m*n$ processors data fraction $\alpha_{i}$.
+\end{algorithmic}
+\end{algorithm}
+
+In term of the time complexity : 
+
+\begin{itemize}
+\item The time complexity of calculating the determinant is $O(r^{3})$ with Gaussian elimination or LU decomposition.  $r$ is the rank of flow matrix and $r$ is $O(\max(m,n))$.
+\item The time complexity of calculating the flow matrix $A_{i}$ is $O(k*m*n)$. $k$ is the number of data injection.
+\item The total time complexity is $O(k*\max(m,n)^{3})$.
+\end{itemize}

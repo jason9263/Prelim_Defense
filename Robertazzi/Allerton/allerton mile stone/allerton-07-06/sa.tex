@@ -1,0 +1,22 @@
+The speedup is :
+$$Speedup = \frac{T_{f, 0}}{T_{f, n}}= \frac{\omega T_{cp}}{\alpha_{0}\omega T_{cp}} = \frac{1}{\alpha_{0}} = \left |-\det A \right |$$.
+
+\subsubsection{Data Injection On The Corner Processor}
+
+One can see speedup increases with an increasing number of core (i.e. processor) and also increases with decreasing $\sigma$ (that is increasing communication speed relative to computation speed).
+
+For a large number of cores and $\sigma$ close to one, speedup is three times. $P_{0}$ and two adjacent neighbor processor do most of the processing.
+
+
+\subsubsection{Data Injection On The Boundary Processor}
+The data injection happens on boundary processor $P_{2}$. 
+
+
+Fig shows that if the value $\sigma > 0.2$, the speedup increases rapidly as a function of the number of cores.  If the value $\sigma < 0.1$, the number of cores has linear impact on the speedup performance.  If the number of cores is for $\sigma$ close to one, the speedup is about four since only the three processors close to $P_{0}$ and $P_{0}$ do almost all the processing.
+
+\subsubsection{Data Injection On The Inner Grid Processor}
+For a $5*n$ mesh network, $L$ originate on the inner grid $P_{12}$ and the simulation result says:
+
+
+
+If the number of processor $ > 5$, the cluster equivalence computation ability is at least $5$ time speedup.  There are $5$ processors in the first stage.  For small $\sigma$ speedup growth is linear.  For large $\sigma$ and a large number of cores, speedup is about five as only $P_{0}$ and four adjacent processors do almost all the processing. 
